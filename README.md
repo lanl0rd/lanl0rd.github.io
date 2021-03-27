@@ -33,3 +33,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ng generate lanl0rd --routing
 
 ng generate module notes --route notes --module app.module --style=scss
+
+
+<link id="appFavicon" rel="icon" type="image/x-icon" href="favicon.ico">
+import { DOCUMENT } from '@angular/common';
+constructor(@Inject(DOCUMENT) private _document: HTMLDocument) {}
+this._document.getElementById('appFavicon').setAttribute('href', '/your/icon/path.ico');
