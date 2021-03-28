@@ -19,3 +19,13 @@
 .ubuntu-mono {
     font-family: 'ubuntu-mono';
 }
+
+@font-face {
+    font-family: 'ubuntu-thin';
+    font-display: swap;
+    src: url("../fonts/Ubuntu/Ubuntu-Th.ttf") format("truetype");
+}
+
+.ubuntu-thin {
+    font-family: 'ubuntu-thin';
+}

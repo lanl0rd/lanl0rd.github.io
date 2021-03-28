@@ -7,13 +7,11 @@ const routes: Routes = [
     {
         path: '',
         component: NotesComponent,
-        children:
-        [
-            {
-                path: 'angular',
-                loadChildren: async () => (await import('./angular/angular.module')).NotesAngularModule
-            }
-        ]
+        pathMatch: 'full'
+    },
+    {
+        path: 'angular',
+        loadChildren: async () => (await import('./angular/angular.module')).NotesAngularModule
     }
 ]
 

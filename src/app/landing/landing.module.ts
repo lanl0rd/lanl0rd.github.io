@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common'
 import { AppLandingRoutingModule } from './landing.routing.module'
 import { AppLandingComponent } from './landing.component'
 
+import { CommonRouterElementModule } from '../../libs/common/router/router.element.module'
 
 @NgModule
 ({
@@ -14,7 +15,8 @@ import { AppLandingComponent } from './landing.component'
   imports:
   [
     CommonModule,
-    AppLandingRoutingModule
+    AppLandingRoutingModule,
+    CommonRouterElementModule
   ]
 })
 export class AppLandingModule

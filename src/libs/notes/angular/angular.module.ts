@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common'
 import { NotesAngularRoutingModule } from './angular.routing.module'
 import { NotesAngularComponent } from './angular.component'
 
+import { CommonRouterElementModule } from '../../common/router/router.element.module'
+
 
 @NgModule
 ({
@@ -14,7 +16,8 @@ import { NotesAngularComponent } from './angular.component'
   imports:
   [
     CommonModule,
-    NotesAngularRoutingModule
+    NotesAngularRoutingModule,
+    CommonRouterElementModule
   ]
 })
 export class NotesAngularModule

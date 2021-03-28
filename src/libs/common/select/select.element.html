@@ -1,0 +1,14 @@
+<div
+class="scrollable"
+*ngIf="options"
+>
+
+    <div
+    *ngFor="let opt of options"
+    (click)="clicked.emit(opt)"
+    class="grow ib p"
+    >
+        {{opt}}
+    </div>
+
+</div>

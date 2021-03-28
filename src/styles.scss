@@ -1,2 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
-@import url("assets/styles/fonts.scss")
+@import url("assets/styles/fonts.scss");
+
+html, body {
+    min-height: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    -webkit-overflow-scrolling: touch;
+    -webkit-tap-highlight-color: transparent;
+    cursor: default;
+    word-wrap: break-word;
+    padding: 1rem;
+    text-align: center;
+}
+
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    background-repeat: 'no-repeat';
+}
+
+.glo-drop {
+    backdrop-filter: blur(2.5px);
+    border: solide white 1px;
+    border-radius: 25px;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 1);
+}
+
+.p {
+    padding: .5rem;
+}
+
+.bl {
+    display: block;
+}
+
+.ib {
+    display: inline-block;
+}
+
+.bottom {
+    margin-bottom: 2rem
+}
