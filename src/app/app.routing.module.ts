@@ -5,8 +5,17 @@ import { PreloadAllModules } from '@angular/router';
 
 const routes: Routes = [
     {
+        path: '',
+        loadChildren: async () => (await import('./landing/landing.module')).AppLandingModule,
+        pathMatch: 'full'
+    },
+    {
         path: 'notes',
-        loadChildren: async () => (await import('./notes/notes.module')).NotesModule,
+        loadChildren: async () => (await import('../libs/notes/notes.module')).NotesModule
+    },
+    {
+        path: '**',
+        redirectTo: ''
     }
 ]
 

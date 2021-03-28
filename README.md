@@ -30,11 +30,13 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 
-ng generate lanl0rd --routing
+ng generate lanl0rd --routing (scss)
 
 ng generate module notes --route notes --module app.module --style=scss
 
+// rearranged to libs, added angular child to notes
 
+/* dynamically set favicon */
 <link id="appFavicon" rel="icon" type="image/x-icon" href="favicon.ico">
 import { DOCUMENT } from '@angular/common';
 constructor(@Inject(DOCUMENT) private _document: HTMLDocument) {}
