@@ -14,6 +14,10 @@ const routes: Routes = [
         loadChildren: async () => (await import('../libs/notes/notes.module')).NotesModule
     },
     {
+        path: 'about',
+        loadChildren: async () => (await import('../libs/about/about.feature.module')).AboutFeatureModule
+    },
+    {
         path: '**',
         redirectTo: ''
     }

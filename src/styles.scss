@@ -45,3 +45,16 @@ html, body {
 .bottom {
     margin-bottom: 2rem
 }
+
+.grow {
+    transition: all .2s ease-in-out;
+}
+
+.grow:hover {
+    transform: scale(1.33);
+}
+
+.scrollable {
+    white-space: nowrap;
+    overflow: auto;
+}
