@@ -29,10 +29,14 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 
-
+// dependencies and cli commands used
 ng generate lanl0rd --routing (scss)
-
 ng generate module notes --route notes --module app.module --style=scss
+ng add @angular/pwa --project lanl0rd
+<!-- ng generate app-shell lanl0rd -->
+npm i http-server
+
+
 
 // rearranged to libs, added angular child to notes
 
