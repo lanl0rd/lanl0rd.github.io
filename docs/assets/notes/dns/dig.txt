@@ -1,0 +1,4 @@
+dig -t +short glass.earth TXT 
+
+
+perhaps we can use dig to initially prove control over the domain!

@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core'
 
-@Component({
+@Component
+({
   selector: 'common-select-element',
   templateUrl: './select.element.html',
   styleUrls: ['./select.element.scss']

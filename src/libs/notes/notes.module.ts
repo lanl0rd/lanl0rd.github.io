@@ -6,6 +6,8 @@ import { NotesComponent } from './notes.component'
 
 import { CommonRouterElementModule } from '../common/router/router.element.module'
 
+import { NotesTxtComponentModule } from './txt/txt.component.module'
+
 @NgModule
 ({
   declarations:
@@ -15,8 +17,9 @@ import { CommonRouterElementModule } from '../common/router/router.element.modul
   imports:
   [
     CommonModule,
+    CommonRouterElementModule,
     NotesRoutingModule,
-    CommonRouterElementModule
+    NotesTxtComponentModule
   ]
 })
 export class NotesModule

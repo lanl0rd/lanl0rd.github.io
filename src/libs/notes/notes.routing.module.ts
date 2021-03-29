@@ -11,7 +11,7 @@ const routes: Routes = [
     },
     {
         path: 'angular',
-        loadChildren: async () => (await import('./angular/angular.module')).NotesAngularModule
+        loadChildren: async () => (await import('./angular/angular.feature.module')).NotesAngularFeatureModule
     }
 ]
 

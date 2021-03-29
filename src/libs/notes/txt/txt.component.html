@@ -1,0 +1,27 @@
+<ng-container
+*ngIf="srv.index"
+>
+    <div
+    class="tcenter"
+    >
+        <select
+        [(ngModel)]="selected"
+        (ngModelChange)="srv.changeNote($event)"
+        class="glo-drop p"
+        style="background-color: rgba(0, 0, 0, .5)" 
+        >
+            <option
+            *ngFor="let file of srv.index"
+            [value]="file"
+            >
+                {{file.split('assets/notes/').join('')}}
+            </option>
+        </select>
+    </div>
+
+    <pre
+    class="glo-drop p pre ubuntu-mono"
+    style="background-color: rgba(0, 0, 0, .5)" 
+    >{{srv.note}}</pre>
+
+</ng-container>

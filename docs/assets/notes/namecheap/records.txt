@@ -1,0 +1,18 @@
+ALIAS Record    
+
+@
+
+glass.earth.
+
+5 min
+
+
+
+URL Redirect Record 
+
+www
+
+https://glass.surf
+
+Unmasked
+

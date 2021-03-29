@@ -1,0 +1,2 @@
+cd /home/
+sudo tar czf pi_home.tar.gz pi
