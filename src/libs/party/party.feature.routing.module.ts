@@ -16,6 +16,14 @@ const routes: Routes = [
     {
         path: 'google',
         loadChildren: async () => (await import('./google/google.artifact.module')).PartyGoogleArtifactModule
+    },
+    {
+      path: 'stripe',
+      loadChildren: async () => (await import('./stripe/stripe.element.module')).PartyStripeElementModule
+    },
+    {
+        path: 'twilio',
+        loadChildren: async () => (await import('./twilio/twilio.element.module')).PartyTwilioElementModule
     }
 ]
 
