@@ -12,6 +12,10 @@ const routes: Routes = [
     {
         path: 'paypal',
         loadChildren: async () => (await import('./paypal/paypal.element.module')).PartyPaypalElementModule
+    },
+    {
+        path: 'google',
+        loadChildren: async () => (await import('./google/google.artifact.module')).PartyGoogleArtifactModule
     }
 ]
 
