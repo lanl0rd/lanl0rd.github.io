@@ -69,3 +69,9 @@ html, body {
 .tcenter {
     text-align: center;
 }
+
+.sticky {
+    position: sticky;
+    top: 1.5rem;
+    z-index: 2;
+}
