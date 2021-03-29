@@ -1,0 +1,72 @@
+192.168.0.1:81
+
+admin
+motorla
+
+-- basic --
+DSL mode    
+ADSL
+
+Status  Connected   
+VPI 
+8
+
+VCI 
+35
+
+Encapsulation   
+LLC
+
+Does your internet connection require a username and password?  
+ Yes
+ No
+Internet IP Address
+ Get automatically from your ISP    
+ Use Static IP Address  
+ Use IP over ATM(IPOA)  
+Domain Name Servers(DNS)
+ Get automatically from your ISP    
+ Use these DNS Servers  
+  
+
+
+-- Access control --
+
+Services access control list (SCL) enable or disable the running services.
+
+Services    LAN LAN Port    WAN Port
+ HTTP   enable  
+81
+enable  
+81
+  
+ TELNET enable  
+23
+enable  
+23
+  
+ SSH    enable  
+24
+enable  
+24
+  
+ FTP    enable  
+21
+enable  
+21
+  
+ TFTP   enable  
+69
+enable  
+69
+  
+ ICMP   enable  
+0
+enable  
+0
+  
+ SAMBA  enable  
+445
+enable  
+445
+  

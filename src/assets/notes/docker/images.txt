@@ -1,0 +1,15 @@
+you can make a running container an image! so this is useful if you dont want to make a dockerfile or you cannot remember all the steps or its hard to do all the steps in one RUN command...
+
+So for instance, you can start with a base image (ubuntu), run commands like apt-get update, install curl, then you can make this the new latest version of ubuntu!
+
+
+docker ps
+
+take the id of the container you want to make as the new version.
+
+
+docker container commit 123 ubuntu:latest
+
+
+
+thats all!
