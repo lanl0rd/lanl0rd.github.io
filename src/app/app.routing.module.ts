@@ -14,12 +14,20 @@ const routes: Routes = [
         loadChildren: async () => (await import('../libs/notes/notes.module')).NotesModule
     },
     {
-        path: 'about',
-        loadChildren: async () => (await import('../libs/about/about.feature.module')).AboutFeatureModule
+        path: 'tools',
+        loadChildren: async () => (await import('../libs/tools/tools.feature.module')).ToolsFeatureModule
+    },
+    {
+        path: 'party',
+        loadChildren: async () => (await import('../libs/party/party.feature.module')).PartyFeatureModule
     },
     {
         path: 'play',
         loadChildren: async () => (await import('../libs/play/play.feature.module')).PlayFeatureModule
+    },
+    {
+        path: 'about',
+        loadChildren: async () => (await import('../libs/about/about.feature.module')).AboutFeatureModule
     },
     {
         path: '**',

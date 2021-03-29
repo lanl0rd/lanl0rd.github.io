@@ -34,14 +34,17 @@ ng generate lanl0rd --routing (scss)
 ng generate module notes --route notes --module app.module --style=scss
 ng add @angular/pwa --project lanl0rd
 <!-- ng generate app-shell lanl0rd -->
+ng add @angular/localize
+
 npm i http-server
 
 
 
-// rearranged to libs, added angular child to notes
-
-/* dynamically set favicon */
+<!-- rearranged to libs, added angular child to notes -->
+<!-- dynamically set favicon -->
 <link id="appFavicon" rel="icon" type="image/x-icon" href="favicon.ico">
 import { DOCUMENT } from '@angular/common';
 constructor(@Inject(DOCUMENT) private _document: HTMLDocument) {}
-this._document.getElementById('appFavicon').setAttribute('href', '/your/icon/path.ico');
+this._document.getElementById('appFavicon').setAttribute('href', '/your/icon/path.ico')
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
