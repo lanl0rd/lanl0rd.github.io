@@ -7,8 +7,8 @@
         <select
         [(ngModel)]="selected"
         (ngModelChange)="srv.changeNote($event)"
-        class="glo-drop p"
-        style="background-color: rgba(0, 0, 0, .5)" 
+        class="glo-drop p ubuntu-thin"
+        style="font-size: 24px"
         >
             <option
             *ngFor="let file of srv.index"
@@ -21,7 +21,6 @@
 
     <pre
     class="glo-drop p pre ubuntu-mono"
-    style="background-color: rgba(0, 0, 0, .5)" 
     >{{srv.note}}</pre>
 
 </ng-container>

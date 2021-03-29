@@ -2,11 +2,3 @@
 class="glo-drop bl ubuntu bottom tcenter"
 [routes]="[{'name': '..', 'path': './notes'}]"
 ></common-router-element>
-
-<pre
-class="glo-drop p left-pre ubuntu-mono"
-style="background-color: rgba(0, 0, 0, .5)"
-*ngIf="txtContent$"
->
-    {{txtContent$ | async}}
-</pre>
