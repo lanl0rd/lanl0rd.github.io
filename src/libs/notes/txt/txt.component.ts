@@ -28,7 +28,7 @@ export class NotesTxtComponent
     {
         await this.srv.init()
         this.selected = this.srv.index[0]
-        this.srv.changeNote(this.selected)
+        this.srv.changeNote('assets/notes/' + this.selected)
     }
 
 }

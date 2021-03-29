@@ -20,7 +20,7 @@ export class NotesTxtService
     (
     )
     {
-        this.index = (await this.http.get('assets/index.json').toPromise()as any).filter(path => path.includes('/notes/'))
+        this.index = (await this.http.get('assets/index.json').toPromise()as any).filter(path => path.includes('/notes/')).map(path => path.split('assets/notes/').join(''))
     }
 
     async changeNote

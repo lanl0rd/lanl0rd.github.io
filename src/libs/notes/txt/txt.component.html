@@ -4,9 +4,9 @@
     <div
     class="tcenter"
     >
-        <select
+        <!-- <select
         [(ngModel)]="selected"
-        (ngModelChange)="srv.changeNote($event)"
+        (ngModelChange)="srv.changeNote('assets/notes/' + $event)"
         class="glo-drop p ubuntu-thin"
         style="font-size: 24px"
         >
@@ -14,9 +14,17 @@
             *ngFor="let file of srv.index"
             [value]="file"
             >
-                {{file.split('assets/notes/').join('')}}
+                {{file}}
             </option>
-        </select>
+        </select> -->
+        
+        <common-select-element
+        class="glo-drop p ubuntu-thin bl"
+        [options]="srv.index"
+        [(option)]="selected"
+        (clicked)="srv.changeNote('assets/notes/' + $event)"
+        ></common-select-element>
+
     </div>
 
     <pre

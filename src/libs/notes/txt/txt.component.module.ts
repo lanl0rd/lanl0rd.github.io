@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms'
 
 import { NotesTxtComponent } from './txt.component'
 
+import { CommonSelectElementModule } from '../../common/select/select.element.module'
 
 @NgModule
 ({
@@ -14,7 +15,8 @@ import { NotesTxtComponent } from './txt.component'
   imports:
   [
     CommonModule,
-    FormsModule
+    FormsModule,
+    CommonSelectElementModule
   ],
   exports:
   [

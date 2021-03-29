@@ -5,10 +5,13 @@ class="scrollable"
 
     <div
     *ngFor="let opt of options"
-    (click)="clicked.emit(opt)"
+    (click)="option = opt; optionChange.emit(option); clicked.emit(opt)"
     class="grow ib p"
+    [ngClass]="{'bold': opt === option}"
     >
         {{opt}}
     </div>
+
+    {{option}}
 
 </div>

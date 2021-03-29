@@ -9,6 +9,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core'
 export class CommonSelectElement
 {
 
+    @Input() option
+    @Output() optionChange = new EventEmitter()
     @Input() options
     @Output() clicked = new EventEmitter<any>()
 
