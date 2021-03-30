@@ -9,8 +9,6 @@ export class CommonRouterService
 
     _routes
     _renderedRoutes: string[] = []
-    // activated
-
     activations = []
 
     constructor
@@ -26,7 +24,7 @@ export class CommonRouterService
                 case 'ActivationEnd':
                 {
                     let routes = this.json.pathToValue($event, 'snapshot.routeConfig.data.data.CommonRouterService.routes')
-                    this.activations.push(routes)
+                    this.activations.push(routes ? routes : [])
                     break
                 }
                 case 'NavigationEnd':

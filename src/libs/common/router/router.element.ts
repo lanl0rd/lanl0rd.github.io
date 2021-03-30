@@ -1,7 +1,6 @@
-import { Component, ViewChild } from '@angular/core'
+import { Component } from '@angular/core'
 
 import { CommonRouterService } from './router.service'
-import { CommonRouterDirective } from './router.directive'
 
 @Component
 ({
@@ -12,8 +11,6 @@ import { CommonRouterDirective } from './router.directive'
 export class CommonRouterElement
 {
 
-    // @ViewChild(CommonRouterDirective, {static: true}) host: CommonRouterDirective
-
     constructor
     (
         public srv: CommonRouterService
@@ -21,12 +18,5 @@ export class CommonRouterElement
     {
 
     }
-
-    // ngOnInit
-    // (
-    // )
-    // {
-    //     this.srv.host = this.host
-    // }
 
 }
