@@ -1,5 +1,5 @@
 import { Injectable, ComponentFactoryResolver } from '@angular/core'
-import { Router } from '@angular/router'
+import { Router, RouterEvent, GuardsCheckEnd, GuardsCheckStart, NavigationCancel, NavigationEnd, NavigationError, NavigationStart, ResolveEnd, ResolveStart, RoutesRecognized, ActivationStart, ActivationEnd } from '@angular/router'
 
 import { CommonJsonService } from '../json/json.service'
 
@@ -19,20 +19,15 @@ export class CommonRouterService
     )
     {
         router.events.subscribe($event => {
-            switch ($event.constructor.name)
+            if ($event instanceof ActivationEnd)
             {
-                case 'ActivationEnd':
-                {
-                    let routes = this.json.pathToValue($event, 'snapshot.routeConfig.data.data.CommonRouterService.routes')
-                    this.activations.push(routes ? routes : [])
-                    break
-                }
-                case 'NavigationEnd':
-                {
-                    this.routes(this.activations[0])
-                    this.activations = []
-                    break
-                }
+                let routes = this.json.pathToValue($event, 'snapshot.routeConfig.data.data.CommonRouterService.routes')
+                this.activations.push(routes ? routes : [])
+            }
+            else if ($event instanceof NavigationEnd)
+            {
+                this.routes(this.activations[0])
+                this.activations = []
             }
         })
     }
@@ -42,6 +37,7 @@ export class CommonRouterService
         routes
     )
     {
+        console.log('routes', routes)
         let newRenderedRoutes = []
         for (let r of routes)
         {

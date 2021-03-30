@@ -18,6 +18,7 @@ export class AppInitService
     )
     {
         this.router.resetConfig((await import('../app.routes')).routes)
+        // xsrf http call here {withCredentials: true}
     }
 
 }
