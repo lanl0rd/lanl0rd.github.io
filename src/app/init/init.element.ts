@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import { ActivatedRoute, Router, Routes } from '@angular/router'
+import { CommonRouterService } from '../../libs/common/router/router.service'
 
 @Component
 ({
@@ -9,5 +9,13 @@ import { ActivatedRoute, Router, Routes } from '@angular/router'
 })
 export class AppInitElement
 {
+
+    constructor
+    (
+        public router: CommonRouterService
+    )
+    {
+
+    }
 
 }
