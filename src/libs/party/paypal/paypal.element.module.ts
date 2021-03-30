@@ -1,11 +1,7 @@
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 
-import { PartyPaypalElementRoutingModule } from './paypal.element.routing.module'
 import { PartyPaypalElement } from './paypal.element'
-
-import { CommonRouterElementModule } from '../../common/router/router.element.module'
-
 
 @NgModule
 ({
@@ -15,9 +11,7 @@ import { CommonRouterElementModule } from '../../common/router/router.element.mo
   ],
   imports:
   [
-    CommonModule,
-    PartyPaypalElementRoutingModule,
-    CommonRouterElementModule
+    CommonModule
   ]
 })
 export class PartyPaypalElementModule

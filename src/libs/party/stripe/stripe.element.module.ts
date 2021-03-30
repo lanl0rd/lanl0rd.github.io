@@ -1,11 +1,7 @@
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 
-import { PartyStripeElementRoutingModule } from './stripe.element.routing.module'
 import { PartyStripeElement } from './stripe.element'
-
-import { CommonRouterElementModule } from '../../common/router/router.element.module'
-
 
 @NgModule
 ({
@@ -15,9 +11,7 @@ import { CommonRouterElementModule } from '../../common/router/router.element.mo
   ],
   imports:
   [
-    CommonModule,
-    PartyStripeElementRoutingModule,
-    CommonRouterElementModule
+    CommonModule
   ]
 })
 export class PartyStripeElementModule

@@ -4,8 +4,7 @@ import { CommonModule } from '@angular/common'
 import { NotesAngularFeatureRoutingModule } from './angular.feature.routing.module'
 import { NotesAngularFeature } from './angular.feature'
 
-import { CommonRouterElementModule } from '../../common/router/router.element.module'
-
+// import { CommonRouterElementModule } from '../../common/router/router.element.module'
 
 @NgModule
 ({
@@ -17,7 +16,7 @@ import { CommonRouterElementModule } from '../../common/router/router.element.mo
   [
     CommonModule,
     NotesAngularFeatureRoutingModule,
-    CommonRouterElementModule
+    // CommonRouterElementModule
   ]
 })
 export class NotesAngularFeatureModule

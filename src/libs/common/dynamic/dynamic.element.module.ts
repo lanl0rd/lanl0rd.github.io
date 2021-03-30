@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 
-import { CommonDynamicElement } from './dynamic.element.ng'
-import { CommonDynamicDirective } from './dynamic.directive.ng'
+import { CommonDynamicElement } from './dynamic.element'
+import { CommonDynamicDirective } from './dynamic.directive'
 
 @NgModule
 ({
@@ -10,7 +10,7 @@ import { CommonDynamicDirective } from './dynamic.directive.ng'
     [
         CommonModule
     ],
-     declarations: 
+    declarations: 
     [
         CommonDynamicElement,
         CommonDynamicDirective

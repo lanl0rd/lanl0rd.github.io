@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 
-import { PlayFeatureRoutingModule } from './play.feature.routing.module'
+// import { PlayFeatureRoutingModule } from './play.feature.routing.module'
 import { PlayFeature } from './play.feature'
 
-import { CommonRouterElementModule } from '../common/router/router.element.module'
+// import { CommonRouterElementModule } from '../common/router/router.element.module'
 
 @NgModule
 ({
@@ -15,8 +15,8 @@ import { CommonRouterElementModule } from '../common/router/router.element.modul
   imports:
   [
     CommonModule,
-    PlayFeatureRoutingModule,
-    CommonRouterElementModule
+    // PlayFeatureRoutingModule,
+    // CommonRouterElementModule
   ]
 })
 export class PlayFeatureModule

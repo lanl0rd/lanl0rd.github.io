@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { RouterModule } from '@angular/router'
 
-import { CommonDynamicArtifact } from './dynamic.artifact.ng'
+import { CommonDynamicArtifact } from './dynamic.artifact'
 
-import { CommonDynamicElementModule } from './dynamic.element.module.ng'
+import { CommonDynamicElementModule } from './dynamic.element.module'
 
 @NgModule
 ({
@@ -12,7 +12,8 @@ import { CommonDynamicElementModule } from './dynamic.element.module.ng'
     [
         CommonModule,
         CommonDynamicElementModule,
-        RouterModule.forChild([
+        RouterModule.forChild
+        ([
             {
                 path: '',
                 component: CommonDynamicArtifact

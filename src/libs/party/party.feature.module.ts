@@ -1,10 +1,7 @@
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 
-import { PartyFeatureRoutingModule } from './party.feature.routing.module'
 import { PartyFeature } from './party.feature'
-
-import { CommonRouterElementModule } from '../common/router/router.element.module'
 
 @NgModule
 ({
@@ -14,9 +11,7 @@ import { CommonRouterElementModule } from '../common/router/router.element.modul
   ],
   imports:
   [
-    CommonModule,
-    PartyFeatureRoutingModule,
-    CommonRouterElementModule
+    CommonModule
   ]
 })
 export class PartyFeatureModule

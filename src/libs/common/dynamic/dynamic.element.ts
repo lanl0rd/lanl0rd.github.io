@@ -1,6 +1,6 @@
-import { Component, Input, ViewChild, ComponentFactoryResolver, NgModuleFactory, Injector, Compiler, ChangeDetectorRef } from '@angular/core'
+import { Component, Input, ViewChild, ComponentFactoryResolver, NgModuleFactory, Injector, Compiler } from '@angular/core'
 
-import { CommonDynamicDirective } from './dynamic.directive.ng'
+import { CommonDynamicDirective } from './dynamic.directive'
 
 @Component
 ({

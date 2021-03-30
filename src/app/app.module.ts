@@ -9,6 +9,8 @@ import { AppComponent } from './app.component'
 
 import { environment } from '../environments/environment'
 
+import { CommonDynamicElementModule } from '../libs/common/dynamic/dynamic.element.module'
+
 @NgModule
 ({
   declarations:
@@ -21,7 +23,8 @@ import { environment } from '../environments/environment'
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    CommonDynamicElementModule
   ],
   providers:
   [

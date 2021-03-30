@@ -1,5 +1,7 @@
-import { Component, Input, ViewChild, ComponentFactoryResolver, NgModuleFactory, Injector, Compiler } from '@angular/core'
-import { ActivatedRoute, Router } from '@angular/router'
+import { Component } from '@angular/core'
+import { ActivatedRoute} from '@angular/router'
+
+import { CommonRouterService } from '../router/router.service'
 
 @Component
 ({
@@ -25,11 +27,10 @@ export class CommonDynamicArtifact
     constructor
     (
         public activated: ActivatedRoute,
-        public router: CommonRouterService,
-        public streams: CommonStreamsService
+        public router: CommonRouterService
     )
     {
-
+        this.router.activated = activated
     }
 
     ngOnInit

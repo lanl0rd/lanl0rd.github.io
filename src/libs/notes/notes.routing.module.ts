@@ -7,7 +7,10 @@ const routes: Routes = [
     {
         path: '',
         component: NotesComponent,
-        pathMatch: 'full'
+        pathMatch: 'full',
+        data: {
+            routes: [{'name': '..', 'path': './'}, 'angular']
+        }
     },
     {
         path: 'angular',

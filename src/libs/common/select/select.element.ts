@@ -14,4 +14,11 @@ export class CommonSelectElement
     @Input() options
     @Output() clicked = new EventEmitter<any>()
 
+    ngOnChanges(changes)
+    {
+        console.log('changes', changes)
+        if (!(this.option in this.options))
+            this.option = null
+    }
+
 }

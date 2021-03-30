@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
-import { PartyStripeElement } from './stripe.element'
+
+import { AppLandingFeature } from './landing.feature'
 
 const routes: Routes = [
     {
         path: '',
-        component: PartyStripeElement
+        component: AppLandingFeature,
     }
 ]
 
@@ -20,7 +21,7 @@ const routes: Routes = [
     RouterModule
   ]
 })
-export class PartyStripeElementRoutingModule
+export class AppLandingFeatureRoutingModule
 {
 
 }

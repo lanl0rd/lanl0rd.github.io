@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
+
+import { CommonRouterService } from '../libs/common/router/router.service'
 
 @Component
 ({
@@ -8,5 +10,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent
 {
+
+    init: any = {}
+
+    async ngOnInit
+    (
+    )
+    {
+        this.init = {
+            module: (await import('./init/init.element.module')).AppInitElementModule,
+            component: (await import('./init/init.element')).AppInitElement
+        }
+    }
 
 }

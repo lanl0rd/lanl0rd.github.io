@@ -1,11 +1,7 @@
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 
-import { PartyGoogleArtifactRoutingModule } from './google.artifact.routing.module'
 import { PartyGoogleArtifact } from './google.artifact'
-
-import { CommonRouterElementModule } from '../../common/router/router.element.module'
-
 
 @NgModule
 ({
@@ -15,9 +11,7 @@ import { CommonRouterElementModule } from '../../common/router/router.element.mo
   ],
   imports:
   [
-    CommonModule,
-    PartyGoogleArtifactRoutingModule,
-    CommonRouterElementModule
+    CommonModule
   ]
 })
 export class PartyGoogleArtifactModule
