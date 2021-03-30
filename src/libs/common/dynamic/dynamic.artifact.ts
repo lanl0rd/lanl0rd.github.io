@@ -30,7 +30,7 @@ export class CommonDynamicArtifact
         public router: CommonRouterService
     )
     {
-        this.router.activated = activated
+        // this.router.activated = activated
     }
 
     ngOnInit
@@ -38,14 +38,6 @@ export class CommonDynamicArtifact
     )
     {
         this.selectRoute()
-    }
-
-    ngOnChanges
-    (
-        changes
-    )
-    {
-        console.log('changes', changes)
     }
 
     ngOnDestroy

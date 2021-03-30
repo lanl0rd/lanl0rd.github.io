@@ -1,4 +1,5 @@
-import { Component, Inject } from '@angular/core'
+import { Component } from '@angular/core'
+import { ActivatedRoute, Router, Routes } from '@angular/router'
 
 @Component
 ({
@@ -8,13 +9,5 @@ import { Component, Inject } from '@angular/core'
 })
 export class AppInitElement
 {
-
-    constructor
-    (
-
-    )
-    {
-
-    }
 
 }

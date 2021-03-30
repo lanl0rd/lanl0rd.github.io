@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core'
+import { Injectable, ComponentFactoryResolver } from '@angular/core'
 import { Router } from '@angular/router'
 
 import { CommonJsonService } from '../json/json.service'
@@ -9,21 +9,30 @@ export class CommonRouterService
 
     _routes
     _renderedRoutes: string[] = []
-    activated
+    // activated
+
+    activations = []
 
     constructor
     (
         public router: Router,
-        public json: CommonJsonService
+        public json: CommonJsonService,
+        public resolver: ComponentFactoryResolver
     )
     {
         router.events.subscribe($event => {
             switch ($event.constructor.name)
             {
+                case 'ActivationEnd':
+                {
+                    let routes = this.json.pathToValue($event, 'snapshot.routeConfig.data.data.CommonRouterService.routes')
+                    this.activations.push(routes)
+                    break
+                }
                 case 'NavigationEnd':
                 {
-                    let routes = this.json.pathToValue(this.activated, 'snapshot.data.data.CommonRouterService.routes')
-                    this.routes(routes ? routes : [])
+                    this.routes(this.activations[0])
+                    this.activations = []
                     break
                 }
             }
@@ -53,7 +62,9 @@ export class CommonRouterService
     )
     {
         if (typeof a === 'string')
-            this.router.navigate([a], {relativeTo: this.activated})
+            this.router.navigate([this.router.url + '/' + a], {
+                // relativeTo: this.activated
+            })
         for (let r of this._routes)
             if (r.name === a)
                 this.router.navigate([r.path])
