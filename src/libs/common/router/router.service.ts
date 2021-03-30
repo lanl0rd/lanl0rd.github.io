@@ -37,7 +37,6 @@ export class CommonRouterService
         routes
     )
     {
-        console.log('routes', routes)
         let newRenderedRoutes = []
         for (let r of routes)
         {

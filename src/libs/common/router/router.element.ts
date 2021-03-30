@@ -28,9 +28,10 @@ export class CommonRouterElement
     (
     )
     {
-        this.listener$ = fromEvent(window, 'scroll').subscribe($event => {
+        // this.listener$ = fromEvent(window, 'scroll').subscribe($event => {
+        window.addEventListener('scroll', $event => {
             let currentPos = window.pageYOffset
-            this.ref.nativeElement.style.top = this.scrollPos > currentPos ? '2rem' : '-4rem'
+            this.ref.nativeElement.style.top = this.scrollPos > currentPos || currentPos - 32 <= 0 ? '0' : '-4rem'
             this.scrollPos = currentPos
         })
     }
@@ -39,7 +40,7 @@ export class CommonRouterElement
     (
     )
     {
-      this.listener$.unsubscribe()
+      // this.listener$.unsubscribe()
     }
 
 }

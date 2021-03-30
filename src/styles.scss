@@ -10,8 +10,9 @@ html, body {
     -webkit-tap-highlight-color: transparent;
     cursor: default;
     word-wrap: break-word;
-    padding: 1rem;
     font-size: 24px;
+    padding: 1rem;
+    padding-top: 3rem;
 }
 
 .parallax {
@@ -34,6 +35,10 @@ html, body {
 
 .p {
     padding: 1rem;
+}
+
+.m {
+    margin: 1rem
 }
 
 .bl {
@@ -71,13 +76,18 @@ html, body {
 }
 
 .sticky {
-    position: sticky;
-    top: 1.5rem;
+    // position: sticky;
+    // position: -webkit-sticky;
+    position: fixed;
+    // top: 2rem;
+    top: 0;
     z-index: 2;
     transition-property: top;
     transition-duration: .5s;
     transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
     transition-delay: 0s;
+    left: 0;
+    right: 0;
 }
 
 .hidden {
