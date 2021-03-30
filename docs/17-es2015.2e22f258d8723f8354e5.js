@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[17],{sdAV:function(n,t,o){"use strict";o.r(t),o.d(t,"PartyFeatureModule",(function(){return c}));var r=o("ofXK"),e=o("tyNb"),u=o("fXoL");let c=(()=>{class n{}return n.\u0275mod=u.Hb({type:n}),n.\u0275inj=u.Gb({factory:function(t){return new(t||n)},imports:[[r.b,e.c]]}),n})()}}]);
