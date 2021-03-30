@@ -5,22 +5,18 @@ import { HttpClientModule } from '@angular/common/http'
 import { ServiceWorkerModule } from '@angular/service-worker'
 
 import { AppRoutingModule } from './app.routing.module'
-import { AppComponent } from './app.component'
+import { App } from './app'
 import { AppInitService } from './init/init.service'
 
 import { environment } from '../environments/environment'
 
 import { CommonDynamicElementModule } from '../libs/common/dynamic/dynamic.element.module'
 
-let init = (appInit: AppInitService) => {
-   return (): Promise<any> => { return appInit.initialize() }
-}
-
 @NgModule
 ({
   declarations:
   [
-    AppComponent
+    App
   ],
   imports:
   [
@@ -35,14 +31,16 @@ let init = (appInit: AppInitService) => {
   [
     {
       provide: APP_INITIALIZER,
-      useFactory: init,
+      useFactory: (appInit: AppInitService) => {
+        return (): Promise<any> => { return appInit.initialize() }
+      },
       multi: true,
       deps: [AppInitService]
     }
   ],
   bootstrap:
   [
-    AppComponent
+    App
   ]
 })
 export class AppModule

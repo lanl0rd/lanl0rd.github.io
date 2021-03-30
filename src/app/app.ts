@@ -1,14 +1,12 @@
 import { Component } from '@angular/core'
 
-import { CommonRouterService } from '../libs/common/router/router.service'
-
 @Component
 ({
   selector: 'app',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  templateUrl: './app.html',
+  styleUrls: ['./app.scss']
 })
-export class AppComponent
+export class App
 {
 
     init: any = {}

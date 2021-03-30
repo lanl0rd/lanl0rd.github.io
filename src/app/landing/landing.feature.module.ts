@@ -1,10 +1,7 @@
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 
-// import { AppLandingFeatureRoutingModule } from './landing.feature.routing.module'
 import { AppLandingFeature } from './landing.feature'
-
-// import { CommonRouterElementModule } from '../../libs/common/router/router.element.module'
 
 @NgModule
 ({
@@ -14,9 +11,7 @@ import { AppLandingFeature } from './landing.feature'
   ],
   imports:
   [
-    CommonModule,
-    // AppLandingFeatureRoutingModule,
-    // CommonRouterElementModule
+    CommonModule
   ]
 })
 export class AppLandingFeatureModule
