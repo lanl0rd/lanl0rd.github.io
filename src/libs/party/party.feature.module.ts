@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
+import { RouterModule } from '@angular/router'
 
 import { PartyFeature } from './party.feature'
 
@@ -11,7 +12,8 @@ import { PartyFeature } from './party.feature'
   ],
   imports:
   [
-    CommonModule
+    CommonModule,
+    RouterModule
   ]
 })
 export class PartyFeatureModule

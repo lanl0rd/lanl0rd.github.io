@@ -61,7 +61,7 @@ const routes: Routes = [
             module: async () => (await import('../libs/tools/tools.feature.module')).ToolsFeatureModule,
             data: {
                 CommonRouterService: {
-                    routes: [{'name': '..', 'path': '../notes'}]
+                    routes: [{'name': '..', 'path': '../'}]
                 }
             }
         }
@@ -80,62 +80,62 @@ const routes: Routes = [
             }
         },
         children: [
-            // {
-            //     path: 'paypal',
-            //     component: CommonDynamicArtifact,
-            //     data:
-            //     {
-            //         component: async () => (await import('../libs/party/paypal/paypal.feature')).PartyPaypalFeature,
-            //         module: async () => (await import('../libs/party/paypal/paypal.feature.module')).PartyPaypalFeatureModule,
-            //         data: {
-            //             CommonRouterService: {
-            //                 routes: [{'name': '..', 'path': '../'}]
-            //             }
-            //         }
-            //     }
-            // },
-            // {
-            //     path: 'google',
-            //     component: CommonDynamicArtifact,
-            //     data:
-            //     {
-            //         component: async () => (await import('../libs/party/google/google.feature')).PartyGoogleFeature,
-            //         module: async () => (await import('../libs/party/google/google.feature.module')).PartyGoogleFeatureModule,
-            //         data: {
-            //             CommonRouterService: {
-            //                 routes: [{'name': '..', 'path': '../'}]
-            //             }
-            //         }
-            //     }
-            // },
-            // {
-            //     path: 'stripe',
-            //     component: CommonDynamicArtifact,
-            //     data:
-            //     {
-            //         component: async () => (await import('../libs/party/stripe/stripe.feature')).PartyStripeFeature,
-            //         module: async () => (await import('../libs/party/stripe/stripe.feature.module')).PartyStripeFeatureModule,
-            //         data: {
-            //             CommonRouterService: {
-            //                 routes: [{'name': '..', 'path': '../'}]
-            //             }
-            //         }
-            //     }
-            // },
-            // {
-            //     path: 'twilio',
-            //     component: CommonDynamicArtifact,
-            //     data:
-            //     {
-            //         component: async () => (await import('../libs/party/twilio/twilio.feature')).PartyTwilioFeature,
-            //         module: async () => (await import('../libs/party/twilio/twilio.feature.module')).PartyTwilioFeatureModule,
-            //         data: {
-            //             CommonRouterService: {
-            //                 routes: [{'name': '..', 'path': '../'}]
-            //             }
-            //         }
-            //     }
-            // }
+            {
+                path: 'paypal',
+                component: CommonDynamicArtifact,
+                data:
+                {
+                    component: async () => (await import('../libs/party/paypal/paypal.element')).PartyPaypalElement,
+                    module: async () => (await import('../libs/party/paypal/paypal.element.module')).PartyPaypalElementModule,
+                    data: {
+                        CommonRouterService: {
+                            routes: [{'name': '..', 'path': '../'}]
+                        }
+                    }
+                }
+            },
+            {
+                path: 'google',
+                component: CommonDynamicArtifact,
+                data:
+                {
+                    component: async () => (await import('../libs/party/google/google.artifact')).PartyGoogleArtifact,
+                    module: async () => (await import('../libs/party/google/google.artifact.module')).PartyGoogleArtifactModule,
+                    data: {
+                        CommonRouterService: {
+                            routes: [{'name': '..', 'path': '../'}]
+                        }
+                    }
+                }
+            },
+            {
+                path: 'stripe',
+                component: CommonDynamicArtifact,
+                data:
+                {
+                    component: async () => (await import('../libs/party/stripe/stripe.element')).PartyStripeElement,
+                    module: async () => (await import('../libs/party/stripe/stripe.element.module')).PartyStripeElementModule,
+                    data: {
+                        CommonRouterService: {
+                            routes: [{'name': '..', 'path': '../'}]
+                        }
+                    }
+                }
+            },
+            {
+                path: 'twilio',
+                component: CommonDynamicArtifact,
+                data:
+                {
+                    component: async () => (await import('../libs/party/twilio/twilio.element')).PartyTwilioElement,
+                    module: async () => (await import('../libs/party/twilio/twilio.element.module')).PartyTwilioElementModule,
+                    data: {
+                        CommonRouterService: {
+                            routes: [{'name': '..', 'path': '../'}]
+                        }
+                    }
+                }
+            }
         ]
     },
     {
