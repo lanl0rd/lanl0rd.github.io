@@ -25,10 +25,10 @@ html, body {
 
 .glo-drop {
     backdrop-filter: blur(2.5px);
-    border: solid white 1px;
-    border-radius: 25px;
-    -webkit-box-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 1);
-    box-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 1);
+    // border: solid white 1px;
+    border-radius: 7px;
+    -webkit-box-shadow: 0px 0px 2px 0px rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 2px 0px rgba(255, 255, 255, 1);
     background-color: rgba(0, 0, 0, 0);
     color: white;
 }
@@ -80,7 +80,7 @@ html, body {
     // position: -webkit-sticky;
     position: fixed;
     // top: 2rem;
-    top: 0;
+    top: 0px;
     z-index: 2;
     transition-property: top;
     transition-duration: .5s;
