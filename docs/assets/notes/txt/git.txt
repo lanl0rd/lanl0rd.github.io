@@ -1,6 +1,6 @@
 git init
 git config receive.denyCurrentBranch ignore
-git config --global user.email "nik.caryl@gmail.com"
+git config --global user.email "****@gmail.com"
 git config --global user.name "simba"
 git clean -fd
 New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" -Name DefaultShell -Value "C:\Program Files\Git\bin\bash.exe" -PropertyType String -Force

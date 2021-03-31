@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1617149906675,
+  "timestamp": 1617149990689,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -627,7 +627,7 @@
     "/assets/notes/txt/dom.txt": "e565e2b0c80b4491262c10337761a8ec8cefb773",
     "/assets/notes/txt/dotenv.txt": "e4df3603b9f9c032f85d8ecd8c210f8440bc42bb",
     "/assets/notes/txt/encryption.txt": "df714e039dec22522fb5bc8dceda0495a216ece8",
-    "/assets/notes/txt/git.txt": "a1e4d0c967c0dc6ecff2ff081cebf924f8e21106",
+    "/assets/notes/txt/git.txt": "1c06294249e5316be4c43268e819b2feba9f1656",
     "/assets/notes/txt/hosts.txt": "9be54ac0b96345e30b5ad9579f6fa5a70de6e1cb",
     "/assets/notes/txt/http.txt": "f1e0ece8cc0af0f1d4ae2543ec8aa44a078e6206",
     "/assets/notes/txt/java-final-vs-static.txt": "97560a8e6e7b5be2372a5ac4ed3591b62bce4ba8",
@@ -655,11 +655,11 @@
     "/assets/notes/txt/spring-boot-completable-future.txt": "ab51d063dbf288fbbd351c89f81f9852de021ca7",
     "/assets/notes/txt/ssh.txt": "c81f6c3c36fbfa9c550e52cf9d8fcc11a216ad93",
     "/assets/notes/txt/sshfs.txt": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
-    "/assets/notes/txt/ssl.txt": "f2d9fbdfb166e21c47a747e06bf2f247700e8594",
+    "/assets/notes/txt/ssl.txt": "e75f3e7b2305d8e846d3e9a5e1b11a0a139242b5",
     "/assets/notes/txt/ssr.txt": "bbd096b715b950978841e5a3cae4ea9a6f542b79",
     "/assets/notes/txt/sticky.txt": "0a8c94a8d603e1b97e9d65e5531ef328bc3f5e04",
     "/assets/notes/txt/targzip.txt": "1c9bba02d427a09297f4acaf5f4178cf0a3c1b36",
-    "/assets/notes/txt/ubuntu.txt": "fd3c8ad1be6a09a30c89ce68b40c18f6151981d7",
+    "/assets/notes/txt/ubuntu.txt": "9c7f306c658d37375e92fb9308ab2baf2256d267",
     "/assets/notes/txt/window.txt": "ff8dc15becab6259d887c134b3d0ab92aa187aac",
     "/assets/notes/txt/windows-setup.txt": "81c3a834ee7a3e690017b7fe408de75ccd7284dd",
     "/assets/notes/ubuntu/apt.txt": "62903a26503ec16042b2ef387e0000273edb5cf0",

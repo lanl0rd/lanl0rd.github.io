@@ -86,7 +86,7 @@ sudo apt install exfat-fuse exfat-utils
 
 ---- git ----
 sudo apt install git
-git config --global user.email "nik.caryl@gmail.com"
+git config --global user.email "****@gmail.com"
 git config --global user.name "simba"
 
 ** git config --global core.filemode false ** might be necessary, some fuck shit with file type changes
