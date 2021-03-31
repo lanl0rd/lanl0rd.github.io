@@ -39,7 +39,7 @@ export class CommonSelectElement
     (
     )
     {
-        if (!this.searchEnabled || !this.filterFun)
+        if (!this.searchEnabled)
             return this.options
         return this.search.trim().length > 0 ? this.options.filter(data => { return data.includes(this.search) || this.search.includes(data) }) : this.options
     }
