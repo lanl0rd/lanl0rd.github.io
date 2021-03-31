@@ -1,0 +1,3 @@
+tar -czvf name-tar.tar.gz nameoffoldertotar andanother andafile.txt
+
+tar -xf name-of.tar.gz
