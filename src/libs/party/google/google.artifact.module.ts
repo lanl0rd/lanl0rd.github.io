@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common'
 
 import { PartyGoogleArtifact } from './google.artifact'
 
+import { CommonPartyGoogleUserElementModule } from '../../common/party/google/user/user.element.module'
+
 @NgModule
 ({
   declarations:
@@ -11,7 +13,8 @@ import { PartyGoogleArtifact } from './google.artifact'
   ],
   imports:
   [
-    CommonModule
+    CommonModule,
+    CommonPartyGoogleUserElementModule
   ]
 })
 export class PartyGoogleArtifactModule

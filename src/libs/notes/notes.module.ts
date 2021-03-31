@@ -1,10 +1,7 @@
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 
-// import { NotesRoutingModule } from './notes.routing.module'
 import { NotesComponent } from './notes.component'
-
-// import { CommonRouterElementModule } from '../common/router/router.element.module'
 
 import { NotesTxtComponentModule } from './txt/txt.component.module'
 
@@ -17,8 +14,6 @@ import { NotesTxtComponentModule } from './txt/txt.component.module'
   imports:
   [
     CommonModule,
-    // CommonRouterElementModule,
-    // NotesRoutingModule,
     NotesTxtComponentModule
   ]
 })

@@ -37,6 +37,15 @@ import { CommonDynamicElementModule } from '../libs/common/dynamic/dynamic.eleme
       },
       multi: true,
       deps: [AppInitService]
+    },
+    {
+      provide: 'COMMON_GOOGLE_USER',
+      useValue: {
+          clientId: '497104406300-g3e0gceqcp5dtu1f24p5omdipj1g4fmm.apps.googleusercontent.com',
+          secret: 'ORkxcINEXFTaj0d21mc_OzJf',
+          script: 'https://apis.google.com/js/platform.js',
+          verifyEndpoint: location.hostname === 'localhost' ? location.protocol + '//' + document.domain + ':3000' : location.origin.split('systems').join('systems-api') + '/systems/play/verify'
+      }
     }
   ],
   bootstrap:

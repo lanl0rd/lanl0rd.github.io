@@ -72,7 +72,7 @@ alias earth_pull="git pull && git submodule foreach --recursive git pull"
 alias earth_rm_origin="git submodule foreach --recursive git remote rm origin"
 alias earth_add="git submodule foreach --recursive git add ./"
 alias earth_commit="git submodule foreach --recursive git commit"
-alias start="echo G0ld3nH00h | sudo -S npm start"
+alias start="echo *** | sudo -S npm start"
 
 ---- ssh ----
 sudo apt update

@@ -1,0 +1,74 @@
+<div
+#CommonButtonElement
+[ngStyle]=
+"{
+    'color': color ? color : 'inherit',
+    'filter': filter(),
+    'padding': padding,
+    'box-sizing': 'content-box',
+    'max-width': maxWidth
+}"
+class="photo-container"
+>
+    <img
+    [ngStyle]=
+    "{
+        'height': size,
+        'width': size,
+        'background-color': backgroundColor(),
+        'filter': filter(),
+        'border-radius': borderRadius,
+        'object-fit': 'cover',
+        'border': border
+    }"
+    [ngClass]=
+    "{
+        'animate-spin': spin
+    }"
+    [src]="photo && photo.length > 0 ? photo : 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'"
+    [alt]="text"
+    (mouseover)="mouseover = true"
+    (mouseout)="mouseover = false"
+    (dragstart)="$event.preventDefault()"
+    (click)="click($event)"
+    *ngIf="(photo && photo.trim().length > 0) || colorPhoto"
+    #buttonPhoto
+    loading="lazy"
+    >
+    <i
+    [ngStyle]=
+    "{
+        'font-size': size,
+        'color': fontColour(),
+        'filter': filter()
+    }"
+    class="demo-icon {{icon}}"
+    [ngClass]=
+    "{
+        'animate-spin': spin
+    }"
+    (mouseover)="mouseover = true"
+    (mouseout)="mouseover = false"
+    (click)="click($event)"
+    *ngIf="icon && icon.length > 0 && (!photo || photo.length === 0)"
+    #buttonI
+    ></i>
+    <div
+    *ngIf="!scroll"
+    (mouseover)="mouseover = true"
+    (mouseout)="mouseover = false"
+    (click)="click($event)"
+    [ngStyle]=
+    "{
+        'font-size': fontSize,
+        'font-family': fontFamily,
+        'color': fontColour(),
+        'filter': filter(),
+        'text-align': textAlign,
+        'overflow-wrap': 'break-word'
+    }"
+    #buttonText
+    >
+        {{text}}
+    </div>
+</div>

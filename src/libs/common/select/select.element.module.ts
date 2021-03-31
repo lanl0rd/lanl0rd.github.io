@@ -13,7 +13,8 @@ import { CommonSelectElement } from './select.element'
   ],
   imports:
   [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports:
   [

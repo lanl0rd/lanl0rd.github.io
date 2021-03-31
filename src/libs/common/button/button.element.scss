@@ -1,0 +1,51 @@
+.photo {
+    border-radius: 50%;
+    object-fit: cover;
+    margin: auto;
+    background-repeat: no-repeat;
+    -moz-background-repeat: no-repeat;
+    -webkit-background-repeat: no-repeat;
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -moz-transform: scale(1,1);
+    -webkit-transform: scale(1,1);
+    transform: scale(1,1);
+}
+
+.photo-container {
+    margin: auto;
+    text-align: center;
+    max-width: fit-content;
+}
+
+.visible {
+    overflow-y: visible;
+}
+
+.marquee-scroll {
+    -moz-animation: marquee 4.20s linear infinite;
+    -webkit-animation: marquee 4.20s linear infinite;
+    animation: marquee 4.20s linear infinite;
+}
+
+@-moz-keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+@-webkit-keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+@keyframes marquee {
+    0% { 
+      -moz-transform: translateX(100%);
+      -webkit-transform: translateX(100%);
+      transform: translateX(100%)
+    }
+    100% { 
+      -moz-transform: translateX(-100%);
+      -webkit-transform: translateX(-100%);
+      transform: translateX(-100%);
+    }
+}

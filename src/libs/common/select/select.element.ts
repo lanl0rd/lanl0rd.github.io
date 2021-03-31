@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core'
+import { Component, Input, Output, EventEmitter, ChangeDetectorRef } from '@angular/core'
 
 @Component
 ({
@@ -12,12 +12,36 @@ export class CommonSelectElement
     @Input() option
     @Output() optionChange = new EventEmitter()
     @Input() options
-    @Output() clicked = new EventEmitter<any>()
+    @Output() clicked = new EventEmitter()
+    @Input() searchEnabled = false
+    @Input() filterFun
+    @Input() search = ''
+    @Output() searchChange = new EventEmitter()
 
-    ngOnChanges(changes)
+    constructor
+    (
+        public cd: ChangeDetectorRef
+    )
     {
-        if (!(this.option in this.options))
+        
+    }
+
+    ngOnChanges
+    (
+        changes
+    )
+    {
+        if (!(this.options.includes(this.option)))
             this.option = null
+    }
+
+    renderOptions
+    (
+    )
+    {
+        if (!this.searchEnabled || !this.filterFun)
+            return this.options
+        return this.search.trim().length > 0 ? this.options.filter(data => { return data.includes(this.search) || this.search.includes(data) }) : this.options
     }
 
 }

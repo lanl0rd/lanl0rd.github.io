@@ -3,7 +3,10 @@ import { Router, RouterEvent, GuardsCheckEnd, GuardsCheckStart, NavigationCancel
 
 import { CommonJsonService } from '../json/json.service'
 
-@Injectable({ providedIn: 'root' })
+@Injectable
+({
+    providedIn: 'root'
+})
 export class CommonRouterService
 {
 
