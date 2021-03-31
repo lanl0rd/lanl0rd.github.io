@@ -13,9 +13,9 @@ Found the following certs:
     Expiry Date: 2021-01-16 22:24:20+00:00 (VALID: 87 days)
     Certificate Path: /etc/letsencrypt/live/glass.beer/fullchain.pem
     Private Key Path: /etc/letsencrypt/live/glass.beer/privkey.pem
-  Certificate Name: glass.earth
+  Certificate Name: ass.space
     Serial Number: 47111fc7151ea1eb0ccbd78fbb505db52d3
-    Domains: *.glass.earth glass.earth
+    Domains: *.ass.space ass.space
     Expiry Date: 2021-01-18 21:32:32+00:00 (VALID: 89 days)
-    Certificate Path: /etc/letsencrypt/live/glass.earth/fullchain.pem
-    Private Key Path: /etc/letsencrypt/live/glass.earth/privkey.pem
+    Certificate Path: /etc/letsencrypt/live/ass.space/fullchain.pem
+    Private Key Path: /etc/letsencrypt/live/ass.space/privkey.pem

@@ -3,7 +3,7 @@ docker run -it --rm --name angular -w /app angular sh
 docker run -it --rm --name nest -w /app nest sh
 
 docker run --rm --name realm-angular -p 4200:4200 -w /app angular npm run serve
-docker rm angular-serve --force || true && docker run --privileged --rm -it --name angular-serve -p 4200:4200 --network=earth_network -v ~/earth/realms/angular/src:/app/src -w /app angular ng run angular:serve-ssr --host 0.0.0.0 --publicHost=https://angular.glass.earth
+docker rm angular-serve --force || true && docker run --privileged --rm -it --name angular-serve -p 4200:4200 --network=earth_network -v ~/earth/realms/angular/src:/app/src -w /app angular ng run angular:serve-ssr --host 0.0.0.0 --publicHost=https://angular.ass.space
 
 docker run --rm --name realm-nest -p 3000:3000 -w /app nest npm run serve
 
@@ -54,6 +54,6 @@ docker rm tribe-glass-app-earth-api --force || true && docker run --rm -d -m 16m
 -updated-
 docker rm nest-serve --force || true && docker run -it --name nest-serve -p 3000:3000 nest/glass sh -c "npm run start:dev"
 
-docker rm glass.earth-api.moon --force || true && docker run --privileged --restart=always -dit --name glass.earth-api.moon --network=earth_network -v ~/earth/realms/glass/dist/earth-api:/app/dist/:ro -v ~/earth:/root/earth -v /var/run/docker.sock:/var/run/docker.sock --env EARTH_ROOT=/root/earth/ -w /app/dist --expose 34274 nest/glass node main.js --expose-gc --preserve-symlinks --preserve-symlinks-main
+docker rm ass.space-api.moon --force || true && docker run --privileged --restart=always -dit --name ass.space-api.moon --network=earth_network -v ~/earth/realms/glass/dist/earth-api:/app/dist/:ro -v ~/earth:/root/earth -v /var/run/docker.sock:/var/run/docker.sock --env EARTH_ROOT=/root/earth/ -w /app/dist --expose 34274 nest/glass node main.js --expose-gc --preserve-symlinks --preserve-symlinks-main
 
-docker rm glass.earth-api.moon --force || true && docker run -it --privileged --name glass.earth-api.moon --network=earth_network -v ~/earth:/root/earth -v /var/run/docker.sock:/var/run/docker.sock --env EARTH_ROOT=/root/earth/ -w /root/earth/realms/glass/src/apps/earth-api --expose 34274 nest/glass sh -c "pwd && ls && rm -rf node_modules || true && mkdir node_modules && mount --bind /app/node_modules ./node_modules && rm -rf src/libs || true && mkdir src/libs && mount --bind ../../libs src/libs && npm run start:dev"
+docker rm ass.space-api.moon --force || true && docker run -it --privileged --name ass.space-api.moon --network=earth_network -v ~/earth:/root/earth -v /var/run/docker.sock:/var/run/docker.sock --env EARTH_ROOT=/root/earth/ -w /root/earth/realms/glass/src/apps/earth-api --expose 34274 nest/glass sh -c "pwd && ls && rm -rf node_modules || true && mkdir node_modules && mount --bind /app/node_modules ./node_modules && rm -rf src/libs || true && mkdir src/libs && mount --bind ../../libs src/libs && npm run start:dev"

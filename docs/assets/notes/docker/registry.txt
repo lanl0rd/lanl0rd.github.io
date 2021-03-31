@@ -1,6 +1,6 @@
 docker rm glass_registry_docker -v --force || true && docker service create -p 5000:5000 --network=earth_network_overlay --name glass_registry_docker --mount type=bind,src=/Users/simba/earth/systems/docker/registry/,dst=/var/lib/registry registry
 
-docker image tag nginx:alpine registry.glass.earth/nginx:alpine
+docker image tag nginx:alpine registry.ass.space/nginx:alpine
 
 /* custom config file */
 -v `pwd`/config.yml:/etc/docker/registry/config.yml

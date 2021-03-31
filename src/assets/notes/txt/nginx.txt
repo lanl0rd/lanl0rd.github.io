@@ -12,9 +12,9 @@ none: If no modifiers are present in a location block then the requested URI wil
 
     server {
         listen 443 ssl;
-        server_name hakuna-matata.glass.earth;
-        ssl_certificate glass.earth/glass_earth.crt;
-        ssl_certificate_key glass.earth/glass.earth.key;
+        server_name hakuna-matata.ass.space;
+        ssl_certificate ass.space/glass_earth.crt;
+        ssl_certificate_key ass.space/ass.space.key;
         resolver 127.0.0.11 valid=30s;
         location / {
             set $upstream http://tribe-1-app-1:80;
@@ -25,9 +25,9 @@ none: If no modifiers are present in a location block then the requested URI wil
 
     server {
         listen 443 ssl;
-        server_name chalk-ash-pearl-caramel.glass.earth;
-        ssl_certificate glass.earth/glass_earth.crt;
-        ssl_certificate_key glass.earth/glass.earth.key;
+        server_name chalk-ash-pearl-caramel.ass.space;
+        ssl_certificate ass.space/glass_earth.crt;
+        ssl_certificate_key ass.space/ass.space.key;
         location / {
             root /realms/glass/dist/tribe-1-app-1;
         }
@@ -35,9 +35,9 @@ none: If no modifiers are present in a location block then the requested URI wil
 
     server {
         listen 443 ssl;
-        server_name api.glass.earth;
-        ssl_certificate glass.earth/glass_earth.crt;
-        ssl_certificate_key glass.earth/glass.earth.key;
+        server_name api.ass.space;
+        ssl_certificate ass.space/glass_earth.crt;
+        ssl_certificate_key ass.space/ass.space.key;
         resolver 127.0.0.11 valid=30s;
         location / {
             set $upstream http://tribe-1-app-3:5125;
@@ -48,9 +48,9 @@ none: If no modifiers are present in a location block then the requested URI wil
 
     server {
         listen 443 ssl;
-        server_name files-api.glass.earth;
-        ssl_certificate glass.earth/glass_earth.crt;
-        ssl_certificate_key glass.earth/glass.earth.key;
+        server_name files-api.ass.space;
+        ssl_certificate ass.space/glass_earth.crt;
+        ssl_certificate_key ass.space/ass.space.key;
         resolver 127.0.0.11 valid=30s;
         location / {
             set $upstream http://tribe-1-app-7:54321;

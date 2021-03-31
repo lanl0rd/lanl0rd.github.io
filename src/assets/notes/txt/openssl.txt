@@ -1,5 +1,5 @@
 0) verify ca bundle
-openssl verify glass.earth.ca-bundle
+openssl verify ass.space.ca-bundle
 
 1) Open a command prompt window and cd to the location of your existing certificate, and then verify the certificate chain by using the following command:
 

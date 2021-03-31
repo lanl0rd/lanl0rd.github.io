@@ -68,7 +68,7 @@ export class CommonHttpXsrfService
         if (!('key' in xsrfOptions))
             xsrfOptions['key'] = 'x-xsrf-token'
         if (!('api' in xsrfOptions))
-            xsrfOptions['api'] = 'https://api.glass.earth'
+            xsrfOptions['api'] = 'https://api.ass.space'
         this.interceptFunction = this.defaultIntercept
     }
 
