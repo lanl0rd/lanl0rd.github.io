@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms'
 
 import { CommonSelectElement } from './select.element'
 
+import { CommonButtonElementModule } from '../button/button.element.module'
 
 @NgModule
 ({
@@ -14,7 +15,8 @@ import { CommonSelectElement } from './select.element'
   imports:
   [
     CommonModule,
-    FormsModule
+    FormsModule,
+    CommonButtonElementModule
   ],
   exports:
   [
