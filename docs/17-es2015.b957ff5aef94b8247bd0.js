@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[17],{ZYrK:function(n,t,r){"use strict";r.r(t),r.d(t,"PartyGoogleArtifactModule",function(){return i});var o=r("0ETx"),e=r("4x8T"),c=r("2Y8H");let i=(()=>{class n{}return n.\u0275mod=c.Fb({type:n}),n.\u0275inj=c.Eb({factory:function(t){return new(t||n)},imports:[[o.b,e.a]]}),n})()}}]);

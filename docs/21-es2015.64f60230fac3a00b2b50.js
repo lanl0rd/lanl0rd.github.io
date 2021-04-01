@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[21],{iPUN:function(n,t,e){"use strict";e.r(t),e.d(t,"PartyPaypalElementModule",function(){return i});var r=e("0ETx"),o=e("2Y8H");let i=(()=>{class n{}return n.\u0275mod=o.Fb({type:n}),n.\u0275inj=o.Eb({factory:function(t){return new(t||n)},imports:[[r.b]]}),n})()}}]);

@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[12],{vB2g:function(n,e,t){"use strict";t.r(e),t.d(e,"AppLandingFeature",(function(){return s}));var r=t("fXoL");let s=(()=>{class n{}return n.\u0275fac=function(e){return new(e||n)},n.\u0275cmp=r.Eb({type:n,selectors:[["app-landing-feature"]],decls:0,vars:0,template:function(n,e){},styles:[""]}),n})()}}]);
