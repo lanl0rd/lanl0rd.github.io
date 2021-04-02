@@ -5,7 +5,7 @@ version: '3.7'
 services:
 
  io:
-    image: lanl0rd/works
+    image: lanl0rd/js-works
     deploy:
       replicas: 1
       placement:
