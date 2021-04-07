@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1617761063732,
+  "timestamp": 1617761996279,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -450,7 +450,7 @@
     "/assets/icons/icon-512x512.png": "5c71180dae81242b7ebec55b3fb9be2ea3e69367",
     "/assets/icons/icon-72x72.png": "a8e655a124ae95317a406d085ef3915fc339724a",
     "/assets/icons/icon-96x96.png": "5a5842f8b7dc10fbdb4afa0988e09a8c90536616",
-    "/assets/index.json": "bb0713ac68c5a505578e7c7a44002c73231f53ce",
+    "/assets/index.json": "b8f2b4c05cd07fdaa2c16eb6fab29e906b224bac",
     "/assets/index.py": "bd50ee19ce1bb81f6a767786ea1d58152d7ebbae",
     "/assets/notes/angular/app-init.txt": "3d6f8ea33dac02d5f638756e34ffe0fd66df95cf",
     "/assets/notes/angular/changeDetector.txt": "cdd4a749175321eeee89796d47a1adc790dd7efd",
