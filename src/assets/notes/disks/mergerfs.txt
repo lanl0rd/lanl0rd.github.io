@@ -1,3 +1,7 @@
+// make sure /etc/fuse.conf has uncommented allow others 
+// sudo groupadd fuse
+// sudo usermod -a -G fuse simba
+
 /* if ~/earth is an empty folder with no mounts */
 
 sudo mergerfs -o defaults,allow_other,use_ino,category.create=mfs,moveonenospc=true /media/simba/raoyi/earth/:/media/simba/Seagate\ Expansion\ Drive/earth ~/earth

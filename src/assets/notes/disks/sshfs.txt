@@ -1,3 +1,8 @@
+// make sure /etc/fuse.conf has uncommented allow others 
+// sudo groupadd fuse
+// sudo usermod -a -G fuse simba
+
+
 sudo sed -i 's/#user_allow_other/user_allow_other/g' /etc/fuse.conf
 sudo sshfs -o allow_other,default_permissions,IdentityFile=~/.ssh/id_rsa/ simba@192.168.0.242:/media/simba/raoyi/earth
 sudo nano /etc/fstab
