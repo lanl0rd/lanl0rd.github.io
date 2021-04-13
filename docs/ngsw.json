@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1618338487167,
+  "timestamp": 1618340839501,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -351,6 +351,7 @@
         "/assets/notes/virtualbox/ip.txt",
         "/assets/notes/virtualbox/network.txt",
         "/assets/notes/virtualbox/setup.txt",
+        "/assets/notes/virtualbox/sharing-folders.txt",
         "/assets/notes/virtualbox/windows7-aero.txt",
         "/assets/notes/windows/automatic-signin.txt",
         "/assets/notes/xhost/allow.txt",
@@ -450,7 +451,7 @@
     "/assets/icons/icon-512x512.png": "5c71180dae81242b7ebec55b3fb9be2ea3e69367",
     "/assets/icons/icon-72x72.png": "a8e655a124ae95317a406d085ef3915fc339724a",
     "/assets/icons/icon-96x96.png": "5a5842f8b7dc10fbdb4afa0988e09a8c90536616",
-    "/assets/index.json": "b8f2b4c05cd07fdaa2c16eb6fab29e906b224bac",
+    "/assets/index.json": "996eb27f1b5d40b97f028df30dec765a199bd588",
     "/assets/index.py": "bd50ee19ce1bb81f6a767786ea1d58152d7ebbae",
     "/assets/notes/angular/app-init.txt": "3d6f8ea33dac02d5f638756e34ffe0fd66df95cf",
     "/assets/notes/angular/changeDetector.txt": "cdd4a749175321eeee89796d47a1adc790dd7efd",
@@ -692,6 +693,7 @@
     "/assets/notes/virtualbox/ip.txt": "d90248c7d459a6b509ddc8d19107eb5dbdfb99d1",
     "/assets/notes/virtualbox/network.txt": "01ff6966879d363554b33693de13bb80c21ab3b6",
     "/assets/notes/virtualbox/setup.txt": "e1f775a524060a64773d73e64c3712a0073cc77c",
+    "/assets/notes/virtualbox/sharing-folders.txt": "657b83361d7f55f29a619ea05eac16142de251b2",
     "/assets/notes/virtualbox/windows7-aero.txt": "3b3d7ad28da0d701e4939329a6ccef4783d0976f",
     "/assets/notes/windows/automatic-signin.txt": "2cb335033e774457bc43b4bf15d0b3bd3521b6ea",
     "/assets/notes/xhost/allow.txt": "7201b97f0ce629eebea5f03884aa7df8a5f055bf",
