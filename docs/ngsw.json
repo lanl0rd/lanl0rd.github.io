@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1618340839501,
+  "timestamp": 1618593028679,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -679,7 +679,7 @@
     "/assets/notes/ubuntu/package-not-found.txt": "31c3c3d9275dd7faebe3ce1a97b8a734c5acd48d",
     "/assets/notes/ubuntu/realvnc.txt": "022dae455405501daef02e04ba917fc91f26df80",
     "/assets/notes/ubuntu/root.txt": "a7f4df0e2f749bc78867ed6b6580ecc44347b9bf",
-    "/assets/notes/ubuntu/setup.txt": "dbd64c8b13b31d36c810b8b70d9a3f457e95b048",
+    "/assets/notes/ubuntu/setup.txt": "7c266f649a8e2458b022c71096835a62916398ef",
     "/assets/notes/ubuntu/ssd (amd).txt": "fdf788b4f271779f4d2f323a3e96cd0f2aa80425",
     "/assets/notes/ubuntu/startup-script.txt": "86d449fd74903ca44e8482d40d7eba283dce718e",
     "/assets/notes/ubuntu/startup.txt": "ecb282f50d3df6b175c87c64409112361d6120f4",

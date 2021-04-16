@@ -183,7 +183,66 @@ sudo dd if=/dev/hda of=~/hdadisk.img
 To restore using the Hard Disk Image : To restore a hard disk with the image file of an another hard disk, the following dd command can be used */
 sudo dd if=hdadisk.img of=/dev/hdb
 
-/* steps to be able to vnc */
+
+
+/* in fact with new versions of ubuntu i see that you can just go to remote sharing and set a password and enable it for the current network, the only problem seems to be that when you hop networks you have to some how set the preferences again! looks like there is a dynamic way to do that, stay tuned */
+
+Method 1 :
+This can be achieved with vino vnc server & remmina (both come default with ubuntu; if not install it by running sudo apt-get install remmina). Then Run Following commands from local computer in terminal prompt:
+
+ssh -Y gman@remote. Use trusted X11 forwarding, otherwise it wont work
+
+vino-preferences. It will open vino-preferences.
+
+vino-preference
+
+Also Click configure network automatically to accept connection. But don't enter any password, its base64 encoded. Then click close. Then run:
+
+sudo -s
+
+export DISPLAY=:0.0
+
+xhost +
+
+/usr/lib/vino/vino-server & 
+It will start the vino server.
+
+Logout from server:
+
+xhost -
+
+Press CTRL+C twice
+
+exit
+
+exit
+Then open remmina. Choose vnc under protocol.
+
+Under basic tab put server address in server field.
+
+On ssh tab click enable ssh tunnel. Under ssh authentication, it could be password or public key:
+
+remmina-preference
+
+Click save. And then double click connection-name(home-desktop as shown in the picture) to start browsing remote desktop.
+
+Method 2:
+x11vnc is a simple VNC server and you won't have to mess around with Gnome settings or 500 firewalls, just install x11vnc on all your computers (with puppet or whatever you're using for mass-control).
+
+Then from your local computer run:
+
+ssh user@host -L 5900:localhost:5900 "x11vnc -display :0 -noxdamage"
+Obviously swapping user@host for the username and hostname/IP of the remote computer.
+
+And then use a VNC client of your choice to connect to localhost:5900. The SSH command starts a vnc server on the remote computer and then tunnels back that port over SSH. You don't have to open up any ports (as long as you can already SSH).
+
+If your computers have funny display settings, you might do better to leave off the -display :0 segment in the SSH command. x11vnc will then automatically try to find the right display.
+
+/* bloody keyring stuff */
+seems to be you can open apps and type keyring and click on that app, and then unlock and should be done.
+
+
+/* steps to be able to vnc (may not be necessary anymore with above steps) */
 /*
 vnc viewer app on mac
 (should also probably get remote desktop for windows hosts)
