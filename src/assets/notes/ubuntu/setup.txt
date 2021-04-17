@@ -37,6 +37,51 @@ on the new machine, setup:
 /* from settings, power -> blank screen never */
 gsettings set org.gnome.Vino require-encryption false
 
+
+NOT AS REQUIRED AS!!!!!! when you get locked out, call this vino-setup.sh:
+
+#!/bin/sh
+# This assumes you have access to the system via SSH already, and need 
+# remote VNC access as the same user, and you want only the primary display.
+export DISPLAY=:0
+# Encoded password with http://www.motobit.com/util/base64-decoder-encoder.asp
+export VNC_PASSWORD="cGFzc3dvcmQ="  # password
+# Sadly many common VNC clients don't support encryption.
+export USE_ENCRYPTION=false  # alternatively "true"
+# Set a bunch of useful defaults. (for remote support cases.)
+gsettings reset org.gnome.Vino network-interface
+gsettings set org.gnome.Vino enabled true
+gsettings set org.gnome.Vino prompt-enabled false 
+gsettings set org.gnome.Vino notify-on-connect true
+gsettings set org.gnome.Vino require-encryption ${USE_ENCRYPTION}  
+gsettings set org.gnome.Vino vnc-password "${VNC_PASSWORD}"
+dconf write /org/gnome/settings-daemon/plugins/sharing/vino-server/enabled-connections "['']" 
+# gsettings set org.gnome.Vino vnc-password $(echo -n 'my_password'|base64)
+# gsettings set org.gnome.settings-daemon.plugins.sharing active true
+# gsettings set org.gnome.settings-daemon.plugins.sharing.service:/org/gnome/settings-daemon/plugins/sharing/vino-server/ enabled-connections "[ '' ]"
+
+# gsettings set org.gnome.Vino prompt-enabled false
+# gsettings set org.gnome.Vino authentication-methods "['vnc']"
+# gsettings set org.gnome.Vino require-encryption false
+# gsettings set org.gnome.Vino vnc-password $(echo -n 'mypasswd'|base64)
+# gsettings set org.gnome.settings-daemon.plugins.sharing active true
+# eths=$(nmcli -t -f uuid,type c s --active | grep 802 | awk -F  ":" '{ print "'\''" $1 "'\''" }' | paste -s -d, -)
+# gsettings set org.gnome.settings-daemon.plugins.sharing.service:/org/gnome/settings-daemon/plugins/sharing/vino-server/ enabled-connections "[ $eths ]"
+
+# gsettings set org.gnome.settings-daemon.plugins.sharing.service:/org/gnome/settings-daemon/plugins/sharing/vino-server/ enabled-connections "['UUID']"
+# where UUID is the UUID of the network connection you want to enable it for. Enabling it for multiple UUIDs/connections is also possible using the # format "['UUID1', 'UUID2']". You can find the list of all UUIDs using nmcli c., looks like we should iterate over this and add the UUID on startup automatically
+
+# List all current settings
+for i in `gsettings list-keys org.gnome.Vino`; do 
+  echo $i `gsettings get org.gnome.Vino $i`; 
+done
+# Run the server
+/usr/lib/vino/vino-server
+
+
+
+
+
 /* download vscode, etcher, tweaks and lanlord tools */
 sudo apt update
 sudo apt install -y curl wget git zip unzip mergerfs sshfs rsync openssh-server openssl dnsutils gconf-editor udftools sshpass exfat-utils exfat-fuse f2fs-tools xfsprogs btrfs-progs
@@ -81,7 +126,7 @@ opera
 vivaldi
 */
 
-/* install docker (from web) */
+/* install docker (from web) */ // ive seen apt install -y docker.io work!
 sudo apt-get update
 sudo apt-get install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common
 curl -fsSL https://downloads.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -183,9 +228,27 @@ sudo dd if=/dev/hda of=~/hdadisk.img
 To restore using the Hard Disk Image : To restore a hard disk with the image file of an another hard disk, the following dd command can be used */
 sudo dd if=hdadisk.img of=/dev/hdb
 
+/* bloody keyring stuff */
+seems to be you can open apps and type keyring and click on that app, and then unlock and should be done.
 
+
+
+
+
+
+
+
+
+FUCKKKKKKKKKK vino server is a bitch about network connection it allows by default, the below didnt work but some of it might be useful
 
 /* in fact with new versions of ubuntu i see that you can just go to remote sharing and set a password and enable it for the current network, the only problem seems to be that when you hop networks you have to some how set the preferences again! looks like there is a dynamic way to do that, stay tuned */
+
+sooooo as long as xforwarding is on in ssh server /etc/ssh/sshd_config,  ssh -Y user@server 
+then you can type gnome-control-center 
+this will launch the settings app (only tested this on a fellow ubuntu machine)!! you can then change the settings!
+
+/* the below wasnt very fruitful */
+apt install -y vino dconf-editor
 
 Method 1 :
 This can be achieved with vino vnc server & remmina (both come default with ubuntu; if not install it by running sudo apt-get install remmina). Then Run Following commands from local computer in terminal prompt:
@@ -233,13 +296,8 @@ Then from your local computer run:
 
 ssh user@host -L 5900:localhost:5900 "x11vnc -display :0 -noxdamage"
 Obviously swapping user@host for the username and hostname/IP of the remote computer.
-
 And then use a VNC client of your choice to connect to localhost:5900. The SSH command starts a vnc server on the remote computer and then tunnels back that port over SSH. You don't have to open up any ports (as long as you can already SSH).
-
 If your computers have funny display settings, you might do better to leave off the -display :0 segment in the SSH command. x11vnc will then automatically try to find the right display.
-
-/* bloody keyring stuff */
-seems to be you can open apps and type keyring and click on that app, and then unlock and should be done.
 
 
 /* steps to be able to vnc (may not be necessary anymore with above steps) */

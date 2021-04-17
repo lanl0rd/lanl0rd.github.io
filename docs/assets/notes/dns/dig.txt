@@ -1,4 +1,0 @@
-dig -t +short ass.space TXT 
-
-
-perhaps we can use dig to initially prove control over the domain!
