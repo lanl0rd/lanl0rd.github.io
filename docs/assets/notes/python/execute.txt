@@ -1,0 +1,6 @@
+
+#!/usr/bin/python
+
+chmod +x script.py
+
+./script.py

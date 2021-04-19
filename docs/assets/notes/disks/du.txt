@@ -1,0 +1,3 @@
+du -h your_directory
+
+If you want a brief output, du -hcs your_directory is nice.
