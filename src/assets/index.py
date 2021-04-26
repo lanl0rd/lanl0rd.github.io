@@ -16,12 +16,12 @@ with open('index.json', 'w') as json_file:
 
 process = subprocess.Popen(["git", "add", "."], stdout=subprocess.PIPE)
 output, error = process.communicate()
-print('output add', output, 'error', error)
+print('output add', output.decode("utf-8") , 'error', error.decode("utf-8") )
 
 process = subprocess.Popen(["git", "commit", "-m", "\"assets\""], stdout=subprocess.PIPE)
 output, error = process.communicate()
-print('output commit', output, 'error', error)
+print('output commit', output.decode("utf-8") , 'error', error.decode("utf-8") )
 
 process = subprocess.Popen(["git", "push"], stdout=subprocess.PIPE)
 output, error = process.communicate()
-print('output push', output, 'error', error)
+print('output push', output.decode("utf-8") , 'error', error.decode("utf-8") )
