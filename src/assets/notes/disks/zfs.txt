@@ -1,0 +1,67 @@
+sudo apt install -y zfsutils-linux
+
+whereis zfs
+sudo fdisk -l
+
+
+Creating a Pool
+There are two types of simple storage pools we can create. A striped pool , also called RAID-0 , in which the data is stored in “stripes” across all drives, or a mirrored pool , also called RAID-1 , in which a complete copy of all data is stored separately on each drive. Striped pools are not fault tolerant whereas mirrored pools can survive the failure of one drive. Striped pools have twice the storage capacity of mirrored pools and have better performance than mirrored pools.
+
+To create a striped pool, we run:
+
+sudo zpool create new-pool /dev/sdb /dev/sdc
+
+To create a mirrored pool, we run:
+
+sudo zpool create new-pool mirror /dev/sdb /dev/sdc
+
+A mirrored pool is usually recommended as we’d still be able to access our data if a single drive fails. However, this means that we’ll only get the capacity of a single drive. A striped pool, while giving us the combined storage of all drives, is rarely recommended as we’ll lose all our data if a drive fails. You can also opt for both, or change the designation at a later date if you add more drives to the pool.
+
+The newly created pool is mounted at /new-pool. You can select a different mount point using the -m option:
+
+sudo zpool create -m /usr/share/pool new-pool mirror /dev/sdb /dev/sdc
+The newly mounted pool will appear to Ubuntu as any other part of the filesystem.
+
+You can check the status of ZFS pools with:
+
+sudo zpool status
+
+sudo zpool destroy new-pool
+
+sudo zpool status
+
+----------
+
+ls /dev/disk/by-uuid  or by-id
+ls /dev/disk
+
+----
+sudo zpool clear -nFX WD_1TB
+If wont help, try the following commands to remove the invalid zpool:
+
+zpool list -v
+sudo zfs unmount WD_1TB
+sudo zpool destroy -f WD_1TB
+zpool detach WD_1TB disk1s2
+zpool remove WD_1TB disk1s2
+zpool remove WD_1TB /dev/disk1s2
+zpool set cachefile=/etc/zfs/zpool.cache WD_1TB
+// Finally if nothing helps, remove the file /etc/zfs/zpool.cache (optionally) and just restart your computer.
+
+
+sudo zpool scrub gold
+sudo zpool scrub -s gold  // after a few minutes, it was maybe 10% way through, which you can check with sudo zpool status -v, then magically it was resolved... a full scrub may have also fixed it but i didnt want to wait
+
+// so for suspended / weird mounts that im trying to destroy i had to shut down the machine and unplug the device and it went away
+
+// tank === british pool || matrix character
+
+// force if device is busy
+zfs destroy -f tank/home/ahrens
+// if pool has descendents
+zfs destroy -r tank/ws
+// if pool has indirect descendents and needs a force
+zfs destroy -R tank/ws
+
+// to move to another machine, i was able to literally shutdown the other machine (probably another way to detatch a pool) then plug it into another one and run
+sudo zpool import -f
