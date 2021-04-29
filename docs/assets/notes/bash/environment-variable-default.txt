@@ -1,0 +1,22 @@
+${FRP_TOKEN:-some_password}
+
+You could just use parameter expansion:
+
+${parameter:-word}
+
+If parameter is unset or null, the expansion of word is substituted. Otherwise, the value of parameter is substituted.
+
+So try this:
+
+var=${DEPLOY_ENV:-default_value}
+
+There's also the ${parameter-word} form, which substitutes the default value only when parameter is unset (but not when it's null).
+
+To demonstrate the difference between the two:
+
+$ unset DEPLOY_ENV
+$ echo "'${DEPLOY_ENV:-default_value}' '${DEPLOY_ENV-default_value}'"
+'default_value' 'default_value'
+$ DEPLOY_ENV=
+$ echo "'${DEPLOY_ENV:-default_value}' '${DEPLOY_ENV-default_value}'"
+'default_value' ''
