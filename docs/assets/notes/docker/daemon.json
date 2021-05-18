@@ -1,0 +1,6 @@
+// can be found in $USER/.docker/daemon.json , i think...
+
+{
+    "experimental": true,
+    ...
+}
