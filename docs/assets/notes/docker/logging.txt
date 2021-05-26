@@ -1,6 +1,34 @@
 docker run -v /var/log/docker:/var/log your-image
 
 
+consider making these defaults in .docker/daemon.json, will change the default log driver from json to local which is better for space by doing rolling logs and compression                           
+so this is .docker/config.json, not the same as daemon.json!            
+{
+        "auths": {},
+        "experimental": "enabled",
+        "log-driver":"local",
+        "log-opts": {
+                "max-size": "10m",
+                "max-file": "3"
+        }
+}
+
+/etc/docker/daemon.json
+{
+    "log-driver":"local",
+    "log-opts": {
+        "max-size": "10m",
+        "max-file": "3",
+        "mode": "non-blocking"
+    }
+}
+
+check with
+docker info --format '{{.LoggingDriver}}'
+
+for a container
+docker inspect -f '{{.HostConfig.LogConfig.Type}}' <CONTAINER>
+
 
 Configure logging drivers
 Estimated reading time: 8 minutes
