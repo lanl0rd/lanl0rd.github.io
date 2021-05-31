@@ -8,6 +8,14 @@ mv buildx ~/.docker/cli-plugins/docker-buildx
 .docker/config.json
 {"experimental": "enabled"}
 
+/* soooooo, docker desktop apparently does stuff for you, but if youre running on ubuntu or digital ocean or whatever, you need to do: */
+
+docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
+docker buildx rm builder
+docker buildx create --name builder --driver docker-container --use
+docker buildx inspect --bootstrap
+
+
 
 for arch in amd64 arm64 arm  ; do 
     docker buildx build \

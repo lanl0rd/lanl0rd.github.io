@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1622479558640,
+  "timestamp": 1622479941826,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -556,7 +556,7 @@
     "/assets/notes/docker/api.txt": "acf679de4ed6f0ede47b31cac046084dfb73f6e7",
     "/assets/notes/docker/app-armor.txt": "7cd52e4327ea70e965e32e9308d92e6d54a1d5e0",
     "/assets/notes/docker/backups.txt": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
-    "/assets/notes/docker/buildx.txt": "b51defd9e81308cb91c9aba3e6e97101ce201586",
+    "/assets/notes/docker/buildx.txt": "905295d4ba4e7e23c876677fc62801f03bb3be35",
     "/assets/notes/docker/compose.txt": "7065d1f5d58e861d32f0d4e7eaf218d15e322bc6",
     "/assets/notes/docker/daemon-secure.txt": "6549c3b6bed75299a7b988463cec8a158eeaa2ec",
     "/assets/notes/docker/daemon.json": "767f19ff2223ba338a471d388fc7c1bcd317eed2",
