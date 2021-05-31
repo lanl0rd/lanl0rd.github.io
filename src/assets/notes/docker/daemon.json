@@ -1,6 +1,31 @@
-// can be found in $USER/.docker/daemon.json , i think...
-// .docker/config.json vs daemon.json.....
+
+// $HOME/.docker/config.json
 {
     "experimental": true,
     ...
+}
+
+// etc/docker/daemon.json
+{
+    "log-driver":"local",
+    "log-opts": {
+            "max-size": "10m",
+            "max-file": "3",
+            "mode": "non-blocking",
+            "max-buffer": "4m"
+    }
+}
+
+// if all the options can go to /etc/docker/daemon.json, maybe we can do this:
+
+{
+    "auths": {},
+    "experimental": "enabled",
+    "log-driver":"local",
+    "log-opts": {
+            "max-size": "10m",
+            "max-file": "3",
+            "mode": "non-blocking",
+            "max-buffer": "4m"
+    }
 }

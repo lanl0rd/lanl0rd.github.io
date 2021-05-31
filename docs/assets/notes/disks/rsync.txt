@@ -1,3 +1,5 @@
 time rsync -avhri --progress  ~/earthh/systems/py 192.168.0.105:/home/simba/py
 
 --delete
+
+sudo rsync -avhri -e "ssh -i $HOME/lanl0rd/ssh/key" root@xx.xx.xx.xx:/home/user/lanl0rd/fuse/earth /zfspools/gold

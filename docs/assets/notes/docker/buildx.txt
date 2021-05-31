@@ -1,3 +1,14 @@
+/* to add to a docker instance that says buildx command not recognized */
+export DOCKER_BUILDKIT=1
+docker build --platform=local -o . git://github.com/docker/buildx
+mkdir -p ~/.docker/cli-plugins
+mv buildx ~/.docker/cli-plugins/docker-buildx
+
+/* this may be necessary, it is if it ships with buildx (not defaulted or something) */
+.docker/config.json
+{"experimental": "enabled"}
+
+
 for arch in amd64 arm64 arm  ; do 
     docker buildx build \
     --platform $arch \
