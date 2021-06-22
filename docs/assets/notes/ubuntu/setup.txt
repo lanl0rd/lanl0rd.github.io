@@ -9,9 +9,20 @@ hdmi_mode=74
 hdmi_force_hotplug=1
 hdmi_drive=2
 
-/* below are unnecessary */
-// hdmi_safe=1
-// config_hdmi_boost=9
+/* also seems necessary for docker to use memory controls per container, very important, also for stats to show something other than 0/0
+sudo nano /boot/firmware/cmdline.txt
+
+
+ net.ifnames=0 dwc_otg.lpm_enable=0 console=serial0,115200 cgroup_enable=cpuset cgroup_enable=memory cgroup_memory=1 console=tty1 root=LABEL=writable rootfstype=ext4 elevator=deadline rootwait fixrtc
+
+NOTE: These are the 3 settings to add:
+
+cgroup_enable=cpuset cgroup_enable=memory cgroup_memory=1
+
+Save the file and reboot and the node status will change to ready.
+
+
+
 
 /* set up ssh, by scp -r somehostwithsshconfig:.ssh dotssh */
 /* need to find way to get fingerprint! or do ca ssh setup */
@@ -84,7 +95,7 @@ done
 
 /* download vscode, etcher, tweaks and lanlord tools */
 sudo apt update
-sudo apt install -y curl wget git zip unzip mergerfs sshfs rsync openssh-server openssl dnsutils gconf-editor udftools sshpass exfat-utils exfat-fuse f2fs-tools xfsprogs btrfs-progs net-tools zfsutils-linux
+sudo apt install -y curl wget git zip unzip mergerfs sshfs rsync openssh-server openssl dnsutils gconf-editor udftools sshpass exfat-utils exfat-fuse f2fs-tools xfsprogs btrfs-progs net-tools zfsutils-linux quota
 
 /* if you are missing software center */
 sudo apt install -y software-center
