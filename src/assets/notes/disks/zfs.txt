@@ -1,7 +1,55 @@
+-- install (ubuntu) --
 sudo apt install -y zfsutils-linux
 
+-- check installation --
 whereis zfs
 sudo fdisk -l
+
+-- quick commands --
+
+**to list disks on ubuntu: **
+* i believe you really need to do by-id (seems like a manufacturer name + uuid) or by-uuid, as just using /dev/sda is not reliable on restarts or changing ports!!*
+ls -la /dev/disk/by-id
+
+** check pools list **
+zfs list
+
+** check status **
+zpool status
+
+** another command **
+zfs get all
+
+** change mountpoint **
+(mkdir -p /zfspools/datapool && chown -R $USER:$USER /zfspools/datapool)
+zfs set mountpoint=/zfspools/datapool datapool
+
+** change owner of newly create mountpoint to be user level as / is owned by root **
+chown -R $USER:$USER /zfspools
+chmod a+rwx /zfspools  (i think same as chmod 777 /zfspools)
+
+-- quick intro --
+- striped (just merge all disk capacities together, data is striped across all drives for speed, any drive failure or partition loss or data loss or otherwise is pretty fatal.  kinda just do this if you want zfs to be the filesystem of the os or youre that broke)
+
+
+- mirrored (basically, do this if you just have 2 drives, any more and we can really be doing raidz.  this is as it sounds, mirroring drives A and B so that if one fails, the other has a copy.  you will get half the capacity of the combined drives (the smaller of the 2, so try to use the same size okay))
+
+sudo zpool create -m /zfspools/newpool-name/new-pool-name new-pool-name mirror /dev/disk/by-id/ata-PNY_FF /dev/disk/by-id/ata-SATA-SSD_123 && sudo chown -R $USER:$USER /zfspools/new-pool-name && sudo chmod 777 pioneer
+
+* -m option changes mountpoint, default mount point is /usr/share i think *
+
+- zfs (minimum of 3 drives, you will add on to the pool 3 at a time.  this is a combination of striping and mirroring. you get 1 disk that can fail (parity info equivalent to 1 disk). (tbd how much data you get)
+
+
+- zfs2 (minimum of 4 drives, you will get half of the capacity, so you if you had 4 x 1tb drives, you will get 2 tb of a pool.  the benefit is that you get a bit of striping, though the extra parity will likely slow it down to a normal rate.  you can lose at most 2 of the 4 drives and continue to operate!)
+
+
+- zfs3 (minimum of 5 drives). (tbd)
+
+
+
+
+-- blah --
 
 
 Creating a Pool
