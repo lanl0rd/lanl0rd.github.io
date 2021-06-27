@@ -20,13 +20,48 @@ zpool status
 ** another command **
 zfs get all
 
+** create dataset **
+sudo zfs create datapool/nfsshare
+
 ** change mountpoint **
 (mkdir -p /zfspools/datapool && chown -R $USER:$USER /zfspools/datapool)
 zfs set mountpoint=/zfspools/datapool datapool
 
 ** change owner of newly create mountpoint to be user level as / is owned by root **
 chown -R $USER:$USER /zfspools
-chmod a+rwx /zfspools  (i think same as chmod 777 /zfspools)
+// or
+chown -R nobody:nogroup /zfspools/datapool
+
+sudo chmod a+rwx /zfspools  (i think same as chmod 777 /zfspools)
+sudo chmod 777 /zfspools/datapool
+* i dont think chmod is needed *
+
+** import (may need to do this if moving zpool back or for the first time, the -f flag is because data may have changed and zfs knows it!) (also not sure if it inherits the mountpoint, but apparently carries options like if you has share nfs on) **
+zpool import -f datapool
+
+** export (do this before removing !)
+zpool export datapool
+
+** online (may be needed after import?) **
+zpool online ...
+
+
+** create dataset **
+
+** set quota **
+
+
+
+** enable sharenfs (sudo apt install -y nfs-kernel-server), traditional with nfs you can use /etc/exports, but for zfs you can enable it like **
+sudo zfs set sharenfs=”on” /tank/nfsshare
+
+// Earlier, I alluded to giving only certain IPs the access. You can do so as following (The ‘rw’ stands for read-write permissions, and that is followed by the range of IPs. Make sure that the port number 111 and 2049 are open on your firewall. If you are using ufw, you can check that by running:):
+sudo zfs set sharenfs="rw=@192.168.0.0/24" tank/nfsshare
+
+** Client Side Mounting
+/* This will mount the NFS share on /mnt folder but you could have just as easily picked any other mount point of your choice. Once the share is created, you can mount it on your client machine, by running the command: **/
+mount -t nfs  server.ip:/tank/nfsshare /mnt
+
 
 -- quick intro --
 - striped (just merge all disk capacities together, data is striped across all drives for speed, any drive failure or partition loss or data loss or otherwise is pretty fatal.  kinda just do this if you want zfs to be the filesystem of the os or youre that broke)
@@ -45,7 +80,6 @@ sudo zpool create -m /zfspools/newpool-name/new-pool-name new-pool-name mirror /
 
 
 - zfs3 (minimum of 5 drives). (tbd)
-
 
 
 

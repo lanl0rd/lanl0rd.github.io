@@ -95,7 +95,7 @@ done
 
 /* download vscode, etcher, tweaks and lanlord tools */
 sudo apt update
-sudo apt install -y curl wget git zip unzip mergerfs sshfs rsync openssh-server openssl dnsutils gconf-editor udftools sshpass exfat-utils exfat-fuse f2fs-tools xfsprogs btrfs-progs net-tools zfsutils-linux quota
+sudo apt install -y curl wget git zip unzip mergerfs sshfs rsync openssh-server openssl dnsutils gconf-editor udftools sshpass exfat-utils exfat-fuse f2fs-tools xfsprogs btrfs-progs net-tools zfsutils-linux quota nfs-kernel-server
 
 /* if you are missing software center */
 sudo apt install -y software-center

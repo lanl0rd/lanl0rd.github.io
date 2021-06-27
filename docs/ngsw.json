@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1624811605665,
+  "timestamp": 1624837431801,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -364,6 +364,7 @@
         "/assets/notes/ubuntu/mate.txt",
         "/assets/notes/ubuntu/no-password.txt",
         "/assets/notes/ubuntu/package-not-found.txt",
+        "/assets/notes/ubuntu/permissions.txt",
         "/assets/notes/ubuntu/realvnc.txt",
         "/assets/notes/ubuntu/root.txt",
         "/assets/notes/ubuntu/setup.txt",
@@ -551,7 +552,7 @@
     "/assets/notes/disks/udf.txt": "b8adb7558246a19664499ac2a87d597c02cfef97",
     "/assets/notes/disks/umount.txt": "905e3958f2ab0688f46bcc2e5a4d2874dcf8093f",
     "/assets/notes/disks/zfs-manual.txt": "bdf8314ce944328c50971abfbb9740789bd336d2",
-    "/assets/notes/disks/zfs.txt": "7f041dd8e1da4ee665700317928aec27bbe9d9a6",
+    "/assets/notes/disks/zfs.txt": "bae9f5b2e67dd26c73ec5d7dfd84aad5d6f620b5",
     "/assets/notes/dns/dig.txt": "dda55ac1917dfee9e033ef391e2e69c9d4f67598",
     "/assets/notes/dns/notes.txt": "bb108018bfedb8e6b28a10fe75abb493a57e896a",
     "/assets/notes/docker/add-docker-ubuntu-easy.txt": "83d060a0cb9003a6f1187efc147d83ac33a252db",
@@ -736,9 +737,10 @@
     "/assets/notes/ubuntu/mate.txt": "0abf2636b768eb22e24c31b567500652d8a0eb33",
     "/assets/notes/ubuntu/no-password.txt": "46070d9099d00c4fd1ab16db99869a1bbbb0a2e0",
     "/assets/notes/ubuntu/package-not-found.txt": "31c3c3d9275dd7faebe3ce1a97b8a734c5acd48d",
+    "/assets/notes/ubuntu/permissions.txt": "b365e9f29f348b1bd4a8c974730ca3f8562a70b7",
     "/assets/notes/ubuntu/realvnc.txt": "022dae455405501daef02e04ba917fc91f26df80",
     "/assets/notes/ubuntu/root.txt": "a7f4df0e2f749bc78867ed6b6580ecc44347b9bf",
-    "/assets/notes/ubuntu/setup.txt": "6182a076562a2795355dc201f10213643daf29a7",
+    "/assets/notes/ubuntu/setup.txt": "8c6c7e3b11ac2681ecf743b651e3b31e26626921",
     "/assets/notes/ubuntu/ssd (amd).txt": "fdf788b4f271779f4d2f323a3e96cd0f2aa80425",
     "/assets/notes/ubuntu/startup-script.txt": "86d449fd74903ca44e8482d40d7eba283dce718e",
     "/assets/notes/ubuntu/startup.txt": "ecb282f50d3df6b175c87c64409112361d6120f4",
