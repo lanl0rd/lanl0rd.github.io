@@ -31,7 +31,7 @@ zpool status
 ** another command **
 zfs get all
 
-** create dataset **
+** create dataset (note it wants an empty folder (or for it to not exist) and the parents need to be made!, ie cant do datapool/nfsshare/users/abc without datapool/nssshare and datapool/nsfsshare/users first (also dont forget to chown once done, freaking root**
 sudo zfs create datapool/nfsshare
 
 ** change mountpoint **
@@ -40,8 +40,8 @@ zfs set mountpoint=/zfspools/datapool datapool
 
 ** change owner of newly create mountpoint to be user level as / is owned by root **
 chown -R $USER:$USER /zfspools
-// or
-chown -R nobody:nogroup /zfspools/datapool
+// or (actually dont do below)
+// chown -R nobody:nogroup /zfspools/datapool
 
 sudo chmod a+rwx /zfspools  (i think same as chmod 777 /zfspools)
 sudo chmod 777 /zfspools/datapool
@@ -62,8 +62,9 @@ sudo zpool scrub [pool name]
 ** create dataset (ZFS will automatically mount the dataset at /path/to/pool/[dataset name].) **
 sudo zfs create [pool name]/[dataset name]  
 
-** set quota (amount must be >= current size) **
+** set quota (so i think you can pref refquota as it disregards snapshots, so you can set a 100gb quota that includes data + snapshots, and 50gb refquota to just mean 50gb limit on the data!)(amount must be >= current size) (quota applies to snapshots/descendants, refquota is just data) **
 zfs set quota=10G tank/home/simba
+zfs set quota=none tank/home/simba
 
 ** get quota **
 zfs get quota tank/home/simba
