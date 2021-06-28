@@ -23,7 +23,6 @@ Save the file and reboot and the node status will change to ready.
 
 
 
-
 /* set up ssh, by scp -r somehostwithsshconfig:.ssh dotssh */
 /* need to find way to get fingerprint! or do ca ssh setup */
 
@@ -97,6 +96,16 @@ done
 sudo apt update
 sudo apt install -y curl wget git zip unzip mergerfs sshfs rsync openssh-client openssh-server openssl dnsutils gconf-editor udftools sshpass exfat-utils exfat-fuse f2fs-tools xfsprogs btrfs-progs net-tools zfsutils-linux quota nfs-kernel-server zsh ksh gcc g++ make python3-pip build-essential chromium-browser locales vim apt-transport-https ca-certificates gnupg-agent software-properties-common gdebi
 
+/* next maybe do */
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+rm -f packages.microsoft.gpg
+apt update
+apt install -y code
+#code --install-extension lanl0rd.celeste --user-data-dir /root/.vscode
+
+
 /* may consider */
 sudo apt install -y docker.io
 
@@ -112,6 +121,7 @@ sudo apt-get upgrade
 
 /* or if you just want to be able to double click .deb files to download */
 sudo apt install -y gdebi
+
 
 
 /* sshfs setup */

@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1624901161263,
+  "timestamp": 1624901826860,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -552,7 +552,7 @@
     "/assets/notes/disks/udf.txt": "b8adb7558246a19664499ac2a87d597c02cfef97",
     "/assets/notes/disks/umount.txt": "905e3958f2ab0688f46bcc2e5a4d2874dcf8093f",
     "/assets/notes/disks/zfs-manual.txt": "bdf8314ce944328c50971abfbb9740789bd336d2",
-    "/assets/notes/disks/zfs.txt": "5863052162885a62c47dac5da27c49081c085899",
+    "/assets/notes/disks/zfs.txt": "5ecbe7640886d565e9ecfa5768e57d38cd8f4a69",
     "/assets/notes/dns/dig.txt": "dda55ac1917dfee9e033ef391e2e69c9d4f67598",
     "/assets/notes/dns/notes.txt": "bb108018bfedb8e6b28a10fe75abb493a57e896a",
     "/assets/notes/docker/add-docker-ubuntu-easy.txt": "83d060a0cb9003a6f1187efc147d83ac33a252db",
@@ -740,7 +740,7 @@
     "/assets/notes/ubuntu/permissions.txt": "b365e9f29f348b1bd4a8c974730ca3f8562a70b7",
     "/assets/notes/ubuntu/realvnc.txt": "022dae455405501daef02e04ba917fc91f26df80",
     "/assets/notes/ubuntu/root.txt": "a7f4df0e2f749bc78867ed6b6580ecc44347b9bf",
-    "/assets/notes/ubuntu/setup.txt": "e49beeb53e031a4714cff6a278f5715133cfabae",
+    "/assets/notes/ubuntu/setup.txt": "f484f7560ae3d9f35c1112af9287fe227677a3e4",
     "/assets/notes/ubuntu/ssd (amd).txt": "fdf788b4f271779f4d2f323a3e96cd0f2aa80425",
     "/assets/notes/ubuntu/startup-script.txt": "86d449fd74903ca44e8482d40d7eba283dce718e",
     "/assets/notes/ubuntu/startup.txt": "ecb282f50d3df6b175c87c64409112361d6120f4",
