@@ -11,8 +11,19 @@ sudo fdisk -l
 * i believe you really need to do by-id (seems like a manufacturer name + uuid) or by-uuid, as just using /dev/sda is not reliable on restarts or changing ports!!*
 ls -la /dev/disk/by-id
 
+** create pool **
+zpool create vol0 /dev/sd[x]  
+
+** delete pool **
+sudo zpool destroy [pool name]  
+
+
+** delete all datasets in a pool **
+zfs destroy -r [pool name] 
+
 ** check pools list **
 zfs list
+zpool list -v
 
 ** check status **
 zpool status
@@ -45,10 +56,100 @@ zpool export datapool
 ** online (may be needed after import?) **
 zpool online ...
 
+** scrub **
+sudo zpool scrub [pool name]
 
-** create dataset **
+** create dataset (ZFS will automatically mount the dataset at /path/to/pool/[dataset name].) **
+sudo zfs create [pool name]/[dataset name]  
 
-** set quota **
+** set quota (amount must be >= current size) **
+zfs set quota=10G tank/home/simba
+
+** get quota **
+zfs get quota tank/home/simba
+
+** You can set a refquota on a dataset that limits the amount of disk space that the dataset can consume. This hard limit does not include disk space that is consumed by descendents. For example, studentA's 10 GB quota is not impacted by space that is consumed by snapshots. **
+
+# zfs set refquota=10g students/studentA
+# zfs list -t all -r students
+NAME                          USED  AVAIL  REFER  MOUNTPOINT
+students                      150M  66.8G    32K  /students
+students/studentA             150M  9.85G   150M  /students/studentA
+students/studentA@yesterday      0      -   150M  -
+# zfs snapshot students/studentA@today
+# zfs list -t all -r students
+students                      150M  66.8G    32K  /students
+students/studentA             150M  9.90G   100M  /students/studentA
+students/studentA@yesterday  50.0M      -   150M  -
+students/studentA@today          0      -   100M  -
+
+** In this scenario, studentA might reach the refquota (10 GB) hard limit, but studentA can remove files to recover, even if snapshots exist.
+
+In the preceding example, the smaller of the two quotas (10 GB as compared to 20 GB) is displayed in the zfs list output. To view the value of both quotas, use the zfs get command. For example:**
+
+# zfs get refquota,quota students/studentA
+NAME               PROPERTY  VALUE              SOURCE
+students/studentA  refquota  10G                local
+students/studentA  quota     20G                local
+
+** set reservation **
+zfs set reservation=5G tank/home/bill
+** get reservation **
+zfs get reservation tank/home/bill
+
+** list **
+zfs list -t all -r students
+
+** list datasets **
+zfs list -r tank/home
+
+** list size **
+df -h /tank/home/jeff
+du -sh /tank/home
+
+** You can create a "descendent" dataset/filesystem like so: **
+sudo zfs create [pool name]/[dataset name]/[descendent filesystem]
+
+** delete dataset (A dataset cannot be destroyed if snapshots or clones of the dataset exist.)**
+sudo zfs destroy [pool name]/[dataset name]  
+
+** Set Dataset Record Size (Size should be a value like 16k, 128k, or 1M etc.) (do this for performance, default is 128k) **
+sudo zfs set recordsize=[size] pool/dataset/name
+
+** Get Dataset Record Size **
+sudo zfs get recordsize pool/dataset/name
+
+** snapshot **
+zfs snapshot [pool]/[dataset name]@[snapshot name]  
+
+** list snapshots **
+sudo zfs list -t snapshot  
+
+** rename snapshot **
+zfs rename [pool]/[dataset]@[old name] [new name]  
+
+** restore snapshot **
+zfs rollback -r [pool]/[dataset]@[snapshot name]  
+
+** delete snapshot **
+zfs destroy tank/home/cindys@snap1  
+
+** mount everything (This will let you know if your pool or dataset won't mount for some reason, such as the directory not being empty.) **
+zfs mount -a
+
+** get mountpoints **
+zfs get all | grep mountpoint
+
+** set mountpoint **
+language-bashsudo zfs set mountpoint=/path/to/mount zpool-name/dataset-name
+
+** deduplication (Deduplication had a massive negative effect on performance for me on spinning disk.)**
+sudo zfs set dedup=on zpool-name
+
+** disable dedup **
+sudo zfs set dedup=off zpool-name
+
+
 
 
 
@@ -61,6 +162,11 @@ sudo zfs set sharenfs="rw=@192.168.0.0/24" tank/nfsshare
 ** Client Side Mounting
 /* This will mount the NFS share on /mnt folder but you could have just as easily picked any other mount point of your choice. Once the share is created, you can mount it on your client machine, by running the command: **/
 mount -t nfs  server.ip:/tank/nfsshare /mnt
+
+
+
+
+
 
 
 -- quick intro --
