@@ -95,7 +95,7 @@ NAME               PROPERTY  VALUE              SOURCE
 students/studentA  refquota  10G                local
 students/studentA  quota     20G                local
 
-** set reservation **
+** set reservation (also can do refreserv like refquota) **
 zfs set reservation=5G tank/home/bill
 ** get reservation **
 zfs get reservation tank/home/bill
