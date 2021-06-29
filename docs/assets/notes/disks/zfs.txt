@@ -59,7 +59,8 @@ zpool online ...
 ** scrub **
 sudo zpool scrub [pool name]
 
-** create dataset (ZFS will automatically mount the dataset at /path/to/pool/[dataset name].) **
+** create dataset (ZFS will automatically mount the dataset at /path/to/pool/[dataset name]. (you can do, zfs create -p mypool/some/lower/dir/to/make , and it will make parent datasets for you )
+) **
 sudo zfs create [pool name]/[dataset name]  
 
 ** set quota (so i think you can pref refquota as it disregards snapshots, so you can set a 100gb quota that includes data + snapshots, and 50gb refquota to just mean 50gb limit on the data!)(amount must be >= current size) (quota applies to snapshots/descendants, refquota is just data) **
@@ -143,6 +144,10 @@ zfs mount -a
 ** get mountpoints **
 zfs get all | grep mountpoint
 
+** get all properties **
+zfs get all tank/home
+
+
 ** set mountpoint **
 language-bashsudo zfs set mountpoint=/path/to/mount zpool-name/dataset-name
 
@@ -152,8 +157,31 @@ sudo zfs set dedup=on zpool-name
 ** disable dedup **
 sudo zfs set dedup=off zpool-name
 
+** list zpools (as opposed to zpool status) (-H suppresses headers, -o allow you to specify properties) **
+zpool list
+NAME   SIZE  ALLOC   FREE  CKPOINT  EXPANDSZ   FRAG    CAP  DEDUP    HEALTH  ALTROOT
+gold   238G  57.7G   180G        -         -     2%    24%  1.00x    ONLINE  -
 
+zpool list -Ho name
+gold
 
+** then can crossreference with **
+zfs list -Ho name,mountpoint
+
+gold	/zfspools/gold
+gold/y	/zfspools/gold/y
+gold/y/organizations	/zfspools/gold/y/organizations
+gold/y/users	/zfspools/gold/y/users
+gold/y/users/hi	/zfspools/gold/y/users/hi
+gold/y/users/yo	/zfspools/gold/y/users/yo
+gold/z	/zfspools/gold/z
+gold/z/users	/zfspools/gold/z/users
+gold/z/users/yo	/zfspools/gold/z/users/yo
+
+** or **
+zfs list -Ho mountpoint gold
+
+/zfspools/gold
 
 
 ** enable sharenfs (sudo apt install -y nfs-kernel-server), traditional with nfs you can use /etc/exports, but for zfs you can enable it like **
@@ -167,7 +195,14 @@ sudo zfs set sharenfs="rw=@192.168.0.0/24" tank/nfsshare
 mount -t nfs  server.ip:/tank/nfsshare /mnt
 
 
+** stats **
+zpool iostat
 
+** with virtual layout **
+zpool iostat -v
+
+** stats by pool **
+zpool iostat gold
 
 
 
