@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1624994282317,
+  "timestamp": 1625251640977,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -160,6 +160,7 @@
         "/assets/notes/databases/sqlite.txt",
         "/assets/notes/disks/apple.txt",
         "/assets/notes/disks/auto-mount-x.txt",
+        "/assets/notes/disks/backups-ubuntu.txt",
         "/assets/notes/disks/backups.txt",
         "/assets/notes/disks/dd.txt",
         "/assets/notes/disks/du.txt",
@@ -533,6 +534,7 @@
     "/assets/notes/databases/sqlite.txt": "30fda57556c8920dfea99870d9e94c2fc7f65185",
     "/assets/notes/disks/apple.txt": "880bc6b3838e070dff093c22d782ce8381ccb582",
     "/assets/notes/disks/auto-mount-x.txt": "558275af3af5e63e520184e7048b2b9290d4e438",
+    "/assets/notes/disks/backups-ubuntu.txt": "a5e6dbe95255f87bf243a1e0687a7639769ec584",
     "/assets/notes/disks/backups.txt": "a59576d18c90cd041b898b56755b536ddae8f204",
     "/assets/notes/disks/dd.txt": "caaab9f890b1301c1c00e374cf3e0db4e4d2baf0",
     "/assets/notes/disks/du.txt": "95b14d5c7b2033fb07f871e73323074d922cf4d8",
@@ -544,7 +546,7 @@
     "/assets/notes/disks/mergerfs-docs.txt": "c4d2af30dd0e30ff1ada8e34c5b28c2f03e75c64",
     "/assets/notes/disks/mergerfs.txt": "ae759bc35c998fd11cb00c1a246376af102010d9",
     "/assets/notes/disks/mount.txt": "4ea47e98252815f189a6ad1a18ea3fada6461aee",
-    "/assets/notes/disks/rsync.txt": "4937c8a702d7992e69259d992e04072077d43137",
+    "/assets/notes/disks/rsync.txt": "f95e3d002a0cc8f89a678bd2a58c7cc7e6351d65",
     "/assets/notes/disks/rsyncc.txt": "29fd7d70e36187631fbd2e540386566f7df1a21c",
     "/assets/notes/disks/scp.txt": "6e487b11534d0b0a8861150c8271657789a2525c",
     "/assets/notes/disks/sshfs.txt": "2fab94a8a50a1846cb888cab6bdbc621917d1904",

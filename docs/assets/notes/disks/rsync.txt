@@ -1,4 +1,8 @@
-time rsync -avhri --progress  ~/earthh/systems/py 192.168.0.105:/home/simba/py
+rsync -avhri --progress --delete --exclude= .git/  lanl0rd/* 192.168.0.198:lanl0rd/fuse_zzzz/earth/systems/lanl0rd-space
+
+sudo time rsync -avhrizu --delete --progress -e "ssh -i $HOME/lanl0rd/ssh/oxford" root@192.168.0.198:/home/simba/lanl0rd/fuse_zzzz/earth /zfspools/gold
+
+time rsync -avhri --progress  ~/earthh/systems/py 192.168.0.105:/home/user/py
 
 --delete
 
