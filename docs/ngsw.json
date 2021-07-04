@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1625359824341,
+  "timestamp": 1625416667942,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -180,6 +180,7 @@
         "/assets/notes/disks/udf.txt",
         "/assets/notes/disks/umount.txt",
         "/assets/notes/disks/zfs-manual.txt",
+        "/assets/notes/disks/zfs-snapshots.txt",
         "/assets/notes/disks/zfs.txt",
         "/assets/notes/dns/dig.txt",
         "/assets/notes/dns/notes.txt",
@@ -535,7 +536,7 @@
     "/assets/notes/disks/apple.txt": "880bc6b3838e070dff093c22d782ce8381ccb582",
     "/assets/notes/disks/auto-mount-x.txt": "558275af3af5e63e520184e7048b2b9290d4e438",
     "/assets/notes/disks/backups-ubuntu.txt": "a5e6dbe95255f87bf243a1e0687a7639769ec584",
-    "/assets/notes/disks/backups.txt": "a59576d18c90cd041b898b56755b536ddae8f204",
+    "/assets/notes/disks/backups.txt": "0ba7fbefbc4e747d68b5454ba44d30a481eb0cdf",
     "/assets/notes/disks/dd.txt": "caaab9f890b1301c1c00e374cf3e0db4e4d2baf0",
     "/assets/notes/disks/du.txt": "95b14d5c7b2033fb07f871e73323074d922cf4d8",
     "/assets/notes/disks/erase.txt": "adeaeb35475a2b6aca13be5901d6a80c2b21d9fa",
@@ -554,6 +555,7 @@
     "/assets/notes/disks/udf.txt": "b8adb7558246a19664499ac2a87d597c02cfef97",
     "/assets/notes/disks/umount.txt": "905e3958f2ab0688f46bcc2e5a4d2874dcf8093f",
     "/assets/notes/disks/zfs-manual.txt": "bdf8314ce944328c50971abfbb9740789bd336d2",
+    "/assets/notes/disks/zfs-snapshots.txt": "f3f2b948a5c8dd510b7f5ea67e823a4d2ab03c07",
     "/assets/notes/disks/zfs.txt": "b2e630e78785ac79b47d4753b6bcd30693d51568",
     "/assets/notes/dns/dig.txt": "dda55ac1917dfee9e033ef391e2e69c9d4f67598",
     "/assets/notes/dns/notes.txt": "bb108018bfedb8e6b28a10fe75abb493a57e896a",
@@ -570,7 +572,7 @@
     "/assets/notes/docker/face-setup.txt": "57f2c5b09bf44dc88e6ee8b81545aa821fb7089d",
     "/assets/notes/docker/full-face-xfce-docker.txt": "d82480b174f9b28adceb0cd5909b1aad7911d40b",
     "/assets/notes/docker/health.txt": "287266a0e65496d7722d3c7f0fd487c59772ffa9",
-    "/assets/notes/docker/images.txt": "a2b49177b1aeab3fdbce85622ce2cade9eafd713",
+    "/assets/notes/docker/images.txt": "2f19646c44da6afb5f97d37a4058326b1eedd858",
     "/assets/notes/docker/install.txt": "eb35e9c765cde52fcb67968880ac1ce857989823",
     "/assets/notes/docker/labels.txt": "a40cec418411ad6e43cb4ec230fba2b3644d4099",
     "/assets/notes/docker/logging.txt": "a73576e96212906a2539ece8d5bec93dac457a30",

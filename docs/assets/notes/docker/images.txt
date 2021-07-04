@@ -13,3 +13,21 @@ docker container commit 123 ubuntu:latest
 
 
 thats all!
+
+
+Transferring a Docker image via SSH, bzipping the content on the fly:
+
+docker save <image> | bzip2 | \
+     ssh user@host 'bunzip2 | docker load'
+It's also a good idea to put pv in the middle of the pipe to see how the transfer is going:
+
+docker save <image> | bzip2 | pv | \
+     ssh user@host 'bunzip2 | docker load'
+
+or 
+
+docker save app:1.0 | gzip | DOCKER_HOST=ssh://user@remotehost docker load
+
+or 
+
+docker save app:1.0 | gzip | -H 192.168.0.30 docker load

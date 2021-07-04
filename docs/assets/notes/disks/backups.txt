@@ -1,3 +1,95 @@
+tar -zcvf ~/lanl0rd/fuse_yyyy/fuse_zzzz.0.tar.gz ~/lanl0rd/fuse_zzzz
+
+---
+
+5.2 Using tar to Perform Incremental Dumps
+Incremental backup is a special form of GNU tar archive that stores additional metadata so that exact state of the file system can be restored when extracting the archive.
+
+GNU tar currently offers two options for handling incremental backups: ‘--listed-incremental=snapshot-file’ (‘-g snapshot-file’) and ‘--incremental’ (‘-G’).
+
+The option ‘--listed-incremental’ instructs tar to operate on an incremental archive with additional metadata stored in a standalone file, called a snapshot file. The purpose of this file is to help determine which files have been changed, added or deleted since the last backup, so that the next incremental backup will contain only modified files. The name of the snapshot file is given as an argument to the option:
+
+‘--listed-incremental=file’
+‘-g file’
+Handle incremental backups with snapshot data in file.
+
+To create an incremental backup, you would use ‘--listed-incremental’ together with ‘--create’ (see section How to Create Archives). For example:
+
+$ tar --create \
+           --file=archive.1.tar \
+           --listed-incremental=/var/log/usr.snar \
+           /usr
+This will create in ‘archive.1.tar’ an incremental backup of the ‘/usr’ file system, storing additional metadata in the file ‘/var/log/usr.snar’. If this file does not exist, it will be created. The created archive will then be a level 0 backup; please see the next section for more on backup levels.
+
+Otherwise, if the file ‘/var/log/usr.snar’ exists, it determines which files are modified. In this case only these files will be stored in the archive. Suppose, for example, that after running the above command, you delete file ‘/usr/doc/old’ and create directory ‘/usr/local/db’ with the following contents:
+
+$ ls /usr/local/db
+/usr/local/db/data
+/usr/local/db/index
+Some time later you create another incremental backup. You will then see:
+
+$ tar --create \
+           --file=archive.2.tar \
+           --listed-incremental=/var/log/usr.snar \
+           /usr
+tar: usr/local/db: Directory is new
+usr/local/db/
+usr/local/db/data
+usr/local/db/index
+The created archive ‘archive.2.tar’ will contain only these three members. This archive is called a level 1 backup. Notice that ‘/var/log/usr.snar’ will be updated with the new data, so if you plan to create more ‘level 1’ backups, it is necessary to create a working copy of the snapshot file before running tar. The above example will then be modified as follows:
+
+$ cp /var/log/usr.snar /var/log/usr.snar-1
+$ tar --create \
+           --file=archive.2.tar \
+           --listed-incremental=/var/log/usr.snar-1 \
+           /usr
+You can force ‘level 0’ backups either by removing the snapshot file before running tar, or by supplying the ‘--level=0’ option, e.g.:
+
+$ tar --create \
+           --file=archive.2.tar \
+           --listed-incremental=/var/log/usr.snar-0 \
+           --level=0 \
+           /usr
+Incremental dumps depend crucially on time stamps, so the results are unreliable if you modify a file’s time stamps during dumping (e.g., with the ‘--atime-preserve=replace’ option), or if you set the clock backwards.
+
+Metadata stored in snapshot files include device numbers, which, obviously are supposed to be non-volatile values. However, it turns out that NFS devices have undependable values when an automounter gets in the picture. This can lead to a great deal of spurious redumping in incremental dumps, so it is somewhat useless to compare two NFS devices numbers over time. The solution implemented currently is to consider all NFS devices as being equal when it comes to comparing directories; this is fairly gross, but there does not seem to be a better way to go.
+
+Apart from using NFS, there are a number of cases where relying on device numbers can cause spurious redumping of unmodified files. For example, this occurs when archiving LVM snapshot volumes. To avoid this, use ‘--no-check-device’ option:
+
+‘--no-check-device’
+Do not rely on device numbers when preparing a list of changed files for an incremental dump.
+
+‘--check-device’
+Use device numbers when preparing a list of changed files for an incremental dump. This is the default behavior. The purpose of this option is to undo the effect of the ‘--no-check-device’ if it was given in TAR_OPTIONS environment variable (see TAR_OPTIONS).
+
+There is also another way to cope with changing device numbers. It is described in detail in Fixing Snapshot Files.
+
+Note that incremental archives use tar extensions and may not be readable by non-GNU versions of the tar program.
+
+To extract from the incremental dumps, use ‘--listed-incremental’ together with ‘--extract’ option (see section Extracting Specific Files). In this case, tar does not need to access snapshot file, since all the data necessary for extraction are stored in the archive itself. So, when extracting, you can give whatever argument to ‘--listed-incremental’, the usual practice is to use ‘--listed-incremental=/dev/null’. Alternatively, you can use ‘--incremental’, which needs no arguments. In general, ‘--incremental’ (‘-G’) can be used as a shortcut for ‘--listed-incremental’ when listing or extracting incremental backups (for more information regarding this option, see incremental-op).
+
+When extracting from the incremental backup GNU tar attempts to restore the exact state the file system had when the archive was created. In particular, it will delete those files in the file system that did not exist in their directories when the archive was created. If you have created several levels of incremental files, then in order to restore the exact contents the file system had when the last level was created, you will need to restore from all backups in turn. Continuing our example, to restore the state of ‘/usr’ file system, one would do(12):
+
+$ tar --extract \
+           --listed-incremental=/dev/null \
+           --file archive.1.tar
+$ tar --extract \
+           --listed-incremental=/dev/null \
+           --file archive.2.tar
+To list the contents of an incremental archive, use ‘--list’ (see section How to List Archives), as usual. To obtain more information about the archive, use ‘--listed-incremental’ or ‘--incremental’ combined with two ‘--verbose’ options(13):
+
+tar --list --incremental --verbose --verbose --file archive.tar
+This command will print, for each directory in the archive, the list of files in that directory at the time the archive was created. This information is put out in a format which is both human-readable and unambiguous for a program: each file name is printed as
+
+x file
+where x is a letter describing the status of the file: ‘Y’ if the file is present in the archive, ‘N’ if the file is not included in the archive, or a ‘D’ if the file is a directory (and is included in the archive). See section Dumpdir, for the detailed description of dumpdirs and status codes. Each such line is terminated by a newline character. The last line is followed by an additional newline to indicate the end of the data.
+
+The option ‘--incremental’ (‘-G’) gives the same behavior as ‘--listed-incremental’ when used with ‘--list’ and ‘--extract’ options. When used with ‘--create’ option, it creates an incremental archive without creating snapshot file. Thus, it is impossible to create several levels of incremental backups with ‘--incremental’ option.
+
+
+
+
+--
 cd /home/
 sudo tar czf pi_home.tar.gz pi
 
