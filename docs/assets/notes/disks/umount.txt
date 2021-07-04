@@ -1,5 +1,10 @@
+If possible, let us locate/identify the busy process, kill that process and then unmount the samba share/ drive to minimize damage:
 
+lsof | grep '<mountpoint of /dev/sda1>' (or whatever the mounted device is)
+pkill target_process (kills busy proc. by name | kill PID | killall target_process)
+umount /dev/sda1 (or whatever the mounted device is)
 
+------
 umount -l, does work but i see this article
 
 Avoid umount -l
