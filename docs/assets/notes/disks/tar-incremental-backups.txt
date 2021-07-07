@@ -1,0 +1,19 @@
+tar --listed-incremental=/media/backup/snapshot.file -cJpf /media/backup/home-backup-`date +%d-%m-%Y`.tar.xz /home/user/{Documents,Downloads,Pictures,Music,.config,.Xresources,.xinitrc,.i3,.mozilla,.zshrc}
+
+tar --listed-incremental=/media/backup/snapshot.file -cJpf ./earth-`date +%d-%m-%Y`.tar.xz ~/lanl0rd/mounts/remote/192.168.0.37/zfspools/gold/earth
+
+Add It To Crontab
+By now, you should have a script that looks something like this.
+#! /bin/bash
+
+#
+# Home Directory Backup Script
+#
+tar --listed-incremental=/media/backup/snapshot.file -cJpf /media/backup/home-backup-`date +%d-%m-%Y`.tar.xz /home/user/{Documents,Downloads,Pictures,Music,.config,.Xresources,.xinitrc,.i3,.mozilla,.zshrc}
+Be sure to make the script executable.
+$ chmod +X /home/user/home-backup.sh
+If you're happy with that, you can move on to creating the crontablinux command as root.
+# crontab -u username -e
+An editor(probably nano) will open up for you to add your line. When you're done, it'll look something like this one.
+0 3 * * * /home/user/home-backup.sh
+

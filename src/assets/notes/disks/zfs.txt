@@ -217,13 +217,14 @@ sudo zpool create -m /zfspools/newpool-name/new-pool-name new-pool-name mirror /
 
 * -m option changes mountpoint, default mount point is /usr/share i think *
 
-- zfs (minimum of 3 drives, you will add on to the pool 3 at a time.  this is a combination of striping and mirroring. you get 1 disk that can fail (parity info equivalent to 1 disk). (tbd how much data you get)
+- zfs (raidz) (minimum of 3 drives, you will add on to the pool 3 at a time.  this is a combination of striping and mirroring. you get 1 disk that can fail (parity info equivalent to 1 disk). (tbd how much data you get)
 
 
-- zfs2 (minimum of 4 drives, you will get half of the capacity, so you if you had 4 x 1tb drives, you will get 2 tb of a pool.  the benefit is that you get a bit of striping, though the extra parity will likely slow it down to a normal rate.  you can lose at most 2 of the 4 drives and continue to operate!)
+- zfs2 (raidz2) (minimum of 4 drives, you will get half of the capacity, so you if you had 4 x 1tb drives, you will get 2 tb of a pool.  the benefit is that you get a bit of striping, though the extra parity will likely slow it down to a normal rate.  you can lose at most 2 of the 4 drives and continue to operate!)
+sudo zpool create -m /zfspools/silver silver raidz2 /dev/disk/by-id/... /dev/disk/by-id/...2 /dev/disk/by-id/...3 /dev/disk/by-id/...4
 
 
-- zfs3 (minimum of 5 drives). (tbd)
+- zfs3 (raidz3) (minimum of 5 drives). (tbd)
 
 
 

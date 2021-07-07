@@ -1,4 +1,11 @@
-tar -zcvf ~/lanl0rd/fuse_yyyy/fuse_zzzz.0.tar.gz ~/lanl0rd/fuse_zzzz
+tar -pzcvf ~/lanl0rd/fuse_yyyy/fuse_zzzz.0.tar.gz ~/lanl0rd/fuse_zzzz
+
+The following command backups /wwwdata directory to dumpserver.nixcraft.in (IP 192.168.1.201) host over ssh session:
+
+tar pzcvf - /zfspools/gold | ssh simba@192.168.0.8 "cat > /media/simba/silverI"
+
+OR
+# tar zcvf - /wwwdata | ssh vivek@192.168.1.201 "cat > /backup/wwwdata.tar.gz"
 
 ---
 
