@@ -11,8 +11,8 @@ sudo fdisk -l
 * i believe you really need to do by-id (seems like a manufacturer name + uuid) or by-uuid, as just using /dev/sda is not reliable on restarts or changing ports!!*
 ls -la /dev/disk/by-id
 
-** create pool **
-zpool create vol0 /dev/sd[x]  
+** create pool (basic) **
+zpool create tank /dev/disk/by-id/x  
 
 ** delete pool **
 sudo zpool destroy [pool name]  
