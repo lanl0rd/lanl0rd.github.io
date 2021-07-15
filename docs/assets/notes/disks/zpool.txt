@@ -1,0 +1,5 @@
+// had a disk, raoyi decay or something
+
+sudo zfs unmount -f raoyi // wasnt destroying without unmounting
+sudo zfs destroy raoyi
+sudo zpool create -m /zfspools/raoyi raoyi /dev/disk/by-id/ata-123

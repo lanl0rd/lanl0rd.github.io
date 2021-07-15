@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1626283871803,
+  "timestamp": 1626312552628,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -187,6 +187,7 @@
         "/assets/notes/disks/zfs-manual.txt",
         "/assets/notes/disks/zfs-snapshots.txt",
         "/assets/notes/disks/zfs.txt",
+        "/assets/notes/disks/zpool.txt",
         "/assets/notes/dns/dig.txt",
         "/assets/notes/dns/notes.txt",
         "/assets/notes/docker/add-docker-ubuntu-easy.txt",
@@ -571,6 +572,7 @@
     "/assets/notes/disks/zfs-manual.txt": "bdf8314ce944328c50971abfbb9740789bd336d2",
     "/assets/notes/disks/zfs-snapshots.txt": "f3f2b948a5c8dd510b7f5ea67e823a4d2ab03c07",
     "/assets/notes/disks/zfs.txt": "5e863ccbe225fc414ec949204a68b37b6d79cf7a",
+    "/assets/notes/disks/zpool.txt": "7178ab7e8926b36ea729efeaad91c4a6fee053ff",
     "/assets/notes/dns/dig.txt": "dda55ac1917dfee9e033ef391e2e69c9d4f67598",
     "/assets/notes/dns/notes.txt": "bb108018bfedb8e6b28a10fe75abb493a57e896a",
     "/assets/notes/docker/add-docker-ubuntu-easy.txt": "83d060a0cb9003a6f1187efc147d83ac33a252db",
